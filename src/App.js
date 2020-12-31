@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
-import StorageHandler from './pkgs/storage-session/StorageHandler';
+import {View} from 'react-native';
+import SessionProvider from './pkgs/session/SessionProvider';
 
 const App = () => {
-  return <></>;
+  return <SessionProvider>{null}</SessionProvider>;
 };
 
 export default App;
