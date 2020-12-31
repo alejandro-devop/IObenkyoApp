@@ -38,3 +38,33 @@ it('Should keep containing values', async () => {
     newValue: 25,
   });
 });
+
+it('Should add multiple keys', async () => {
+  expect.assertions(2);
+  const currentStorage = await StorageHandler.getStore();
+  const newKeys = {newKey1: true, newKey2: 2};
+  const expectedStore = {...currentStorage, ...newKeys};
+  const saved = await StorageHandler.setAll(newKeys);
+  expect(saved).toBe(true);
+  const updatedStore = await StorageHandler.getStore();
+  expect(updatedStore).toMatchObject(expectedStore);
+});
+
+it('Should remove multiple keys', async () => {
+  expect.assertions(2);
+  const currentStorage = await StorageHandler.getStore();
+  delete currentStorage.newKey1;
+  delete currentStorage.newKey2;
+  const removed = await StorageHandler.removeMultiple(['newKey1', 'newKey2']);
+  const updatedStore = await StorageHandler.getStore();
+  expect(removed).toBe(true);
+  expect(currentStorage).toMatchObject(updatedStore);
+});
+
+it('Should clear session', async () => {
+  expect.assertions(2);
+  const cleared = await StorageHandler.clearStorage();
+  const currentStorage = await StorageHandler.getStore();
+  expect(cleared).toBe(true);
+  expect(currentStorage).toMatchObject({});
+});
