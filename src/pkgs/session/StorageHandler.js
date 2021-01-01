@@ -20,7 +20,12 @@ class StorageHandler {
     try {
       if (this.store === null) {
         this.store = await AsyncStorage.getItem(STORE_NAME);
-        return this.store ? {...JSON.parse(this.store)} : false;
+        if (this.store) {
+          this.store = JSON.parse(this.store);
+        } else {
+          this.store = {};
+        }
+        return this.store ? {...this.store} : false;
       } else {
         return {...this.store};
       }
