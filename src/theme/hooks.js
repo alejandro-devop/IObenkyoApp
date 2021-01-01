@@ -11,7 +11,7 @@ const initializeStyles = ({styles: themeClasses, ...context}, styles) => {
   } else {
     processedStyles = {};
   }
-  return [processedStyles, themeClasses];
+  return {...themeClasses, ...processedStyles};
 };
 
 /**
