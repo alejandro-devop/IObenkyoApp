@@ -5,13 +5,14 @@ import ApiService from './ApiService';
 export const ApiContext = React.createContext(null);
 const ContextProvider = ApiContext.Provider;
 
-const ApiClient = ({children}) => {
-  // const {
-  //
-  // } = useSession();
-  // if (tokenInfo.accessToken) {
-  //   ApiService.setToken(tokenInfo.accessToken);
-  // }
+const ApiClient = ({children, server = '', endpoints = {}}) => {
+  const {session} = useSession();
+  const {token} = session;
+  ApiService.setServer(server);
+  ApiService.setEndpoints(endpoints);
+  if (token) {
+    ApiService.setToken(token);
+  }
   return <ContextProvider value={ApiService}>{children}</ContextProvider>;
 };
 

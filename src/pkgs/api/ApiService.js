@@ -42,6 +42,8 @@ class ApiService {
       (newValue, currentPart) => {
         if (newValue[currentPart]) {
           newValue = newValue[currentPart];
+        } else {
+          newValue = false;
         }
         return newValue;
       },
@@ -73,7 +75,10 @@ class ApiService {
     }
     try {
       const url = this.resolveUrl(path, replace);
-      const response = await fetch(`${this.server}/${url}`, {
+      if (url === false) {
+        throw new Error(`Url ${path} does not exists`);
+      }
+      const response = await fetch(`${this.server}${url}`, {
         method,
         headers: {
           accept: 'application/json',
@@ -83,7 +88,12 @@ class ApiService {
         },
         body: method === 'GET' ? null : JSON.stringify(payload),
       });
-      return await response.json();
+      const {status} = response;
+      // Todo: handle statuses
+      if (response && ![404].includes(status)) {
+        return await response.json();
+      }
+      return false;
     } catch (e) {
       throw e;
     }
@@ -135,11 +145,12 @@ class ApiService {
   /**
    * Function to execute a delete request only.
    * @param path
+   * @param payload
    * @param options
    * @returns {Promise<any>}
    */
-  doDelete = async (path, options = {}) => {
-    return await this.doRequest(path, {}, {...options, method: 'DELETE'});
+  doDelete = async (path, payload = {}, options = {}) => {
+    return await this.doRequest(path, payload, {...options, method: 'DELETE'});
   };
 }
 
