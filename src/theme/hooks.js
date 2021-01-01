@@ -1,17 +1,20 @@
 import {useContext} from 'react';
 import {StyleSheet} from 'react-native';
 import {ThemeContext} from './ThemeProvider';
+import {mixStyles} from 'theme/functions';
 
 const initializeStyles = ({styles: themeClasses, ...context}, styles) => {
   let processedStyles = {};
   if (styles instanceof Function) {
-    processedStyles = StyleSheet.create(styles({...context}) || {});
+    processedStyles = StyleSheet.create(
+      styles({...context, styles: themeClasses, mixStyles}) || {},
+    );
   } else if (styles instanceof Object) {
     processedStyles = StyleSheet.create(styles);
   } else {
     processedStyles = {};
   }
-  return {...themeClasses, ...processedStyles};
+  return {...processedStyles};
 };
 
 /**

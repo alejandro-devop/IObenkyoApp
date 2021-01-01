@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet} from 'react-native';
 
 export const ThemeContext = React.createContext({});
 
@@ -20,7 +19,7 @@ class ThemeProvider extends React.PureComponent {
     const {theme = {}} = this.props;
     const {styles = {}, variables = {}, palette = {}, shadows = {}} = theme;
     this.theme = {
-      styles: StyleSheet.create(styles),
+      styles,
       variables,
       palette,
       shadows,

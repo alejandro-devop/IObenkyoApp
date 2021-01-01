@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {ImageBackground, SafeAreaView, View} from 'react-native';
 import BaseLayout from 'screens/layouts/base-layout';
 import {useStyles} from 'theme/hooks';
@@ -17,15 +18,15 @@ const LandingLayout = ({children, statusColor = 'light-content'}) => {
   const classes = useStyles(styles);
   return (
     <BaseLayout statusColor={statusColor}>
-      <ImageBackground source={imageBg} style={classes.image}>
-        <View style={classes.root}>
-          <SafeAreaView style={classes.safe}>
-            <ScrollView useKeyboard>{children}</ScrollView>
-          </SafeAreaView>
-        </View>
-      </ImageBackground>
+      <ImageBackground source={imageBg} style={classes.image} />
+      <View style={classes.root}>{children}</View>
     </BaseLayout>
   );
+};
+
+LandingLayout.propTypes = {
+  children: PropTypes.node,
+  statusColor: PropTypes.oneOf(['light-content', 'dark-content']),
 };
 
 export default LandingLayout;
