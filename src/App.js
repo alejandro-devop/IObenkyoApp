@@ -4,6 +4,7 @@ import {SessionProvider} from 'providers/session';
 import ApiClient from 'providers/api';
 import endpoints from 'config/endpoints';
 import useAppEnv from 'hooks/use-app-env';
+import {ThemeProvider, basicTheme} from 'theme';
 import AppNavigator from 'navigation';
 
 const App = () => {
@@ -11,7 +12,9 @@ const App = () => {
   return (
     <SessionProvider>
       <ApiClient server={apiServer} endpoints={endpoints}>
-        <AppNavigator />
+        <ThemeProvider theme={basicTheme}>
+          <AppNavigator />
+        </ThemeProvider>
       </ApiClient>
     </SessionProvider>
   );
