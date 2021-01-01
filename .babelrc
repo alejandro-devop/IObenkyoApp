@@ -29,8 +29,9 @@
         "components": "./src/components",
         "config": "./src/config",
         "hooks": "./src/hooks",
+        "navigation": "./src/navigation",
         "pkgs": "./src/pkgs",
-        "providers": "./src/providers",
+        "providers": "./src/providers"
       }
     }
   ]
