@@ -1,7 +1,7 @@
 export default [
-  {icon: 'brain', label: 'Habits'},
-  {icon: 'bell', label: 'Alerts'},
-  {icon: 'home', label: 'Home'},
-  {icon: 'calendar-alt', label: 'Agenda'},
-  {icon: 'chart-pie', label: 'Stats'},
+  {icon: 'brain', label: 'Habits', path: 'habits'},
+  {icon: 'bell', label: 'Alerts', path: 'alerts'},
+  {icon: 'home', label: 'Home', path: 'dashboard'},
+  {icon: 'calendar-alt', label: 'Agenda', path: 'agenda'},
+  {icon: 'chart-pie', label: 'Stats', path: 'stats'},
 ];

@@ -1,10 +1,13 @@
-export default ({}) => ({
+export default ({palette = {}}) => ({
   button: {
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 100,
+  },
+  buttonSelected: {
+    backgroundColor: palette.primaryDark,
   },
   icon: {
     color: '#FFF',
