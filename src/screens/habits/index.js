@@ -5,7 +5,7 @@ import Text from 'components/base/text';
 
 const HabitsScreen = () => {
   return (
-    <MainLayout>
+    <MainLayout title="Habits" icon="brain">
       <View>
         <Text>Habits</Text>
       </View>

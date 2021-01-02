@@ -3,14 +3,15 @@ import {View} from 'react-native';
 import HeaderAuthenticated from 'screens/layouts/components/header-authenticated';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
+import BaseLayout from 'screens/layouts/base-layout';
 
-const MainLayout = ({children}) => {
+const MainLayout = ({children, icon, title}) => {
   const classes = useStyles(styles);
   return (
-    <>
-      <HeaderAuthenticated />
+    <BaseLayout statusColor="light-content">
+      <HeaderAuthenticated icon={icon} title={title} />
       <View style={classes.root}>{children}</View>
-    </>
+    </BaseLayout>
   );
 };
 

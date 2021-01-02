@@ -5,7 +5,7 @@ import Text from 'components/base/text';
 
 const DashboardScreen = () => {
   return (
-    <MainLayout>
+    <MainLayout title="Home">
       <View>
         <Text>Dashboard</Text>
       </View>

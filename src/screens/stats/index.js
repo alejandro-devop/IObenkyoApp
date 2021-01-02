@@ -5,7 +5,7 @@ import Text from 'components/base/text';
 
 const StatsScreen = () => {
   return (
-    <MainLayout>
+    <MainLayout title="Stats" icon="chart-pie">
       <View>
         <Text>Stats</Text>
       </View>

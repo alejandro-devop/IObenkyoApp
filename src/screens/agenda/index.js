@@ -5,7 +5,7 @@ import Text from 'components/base/text';
 
 const AgendaScreen = () => {
   return (
-    <MainLayout>
+    <MainLayout title="Agenda" icon="calendar-alt">
       <View>
         <Text>Agenda</Text>
       </View>

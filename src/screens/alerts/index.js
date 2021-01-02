@@ -5,7 +5,7 @@ import Text from 'components/base/text';
 
 const AlertsScreen = () => {
   return (
-    <MainLayout>
+    <MainLayout title="Alerts" icon="bullhorn">
       <View>
         <Text>Alerts</Text>
       </View>

@@ -22,7 +22,7 @@ const Icon = ({name, size = 30, style = {}}) => {
 Icon.propTypes = {
   name: PropTypes.string,
   size: PropTypes.number,
-  style: PropTypes.oneOfType([PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Icon;

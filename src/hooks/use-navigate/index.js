@@ -20,7 +20,7 @@ const useNavigate = () => {
   );
 
   return {
-    navigation: navigation.current,
+    navigation: navigation.current ? navigation.current : navigationInstance,
     canGoBack,
     redirect: (path, params) => {
       navigation.dispatch(StackActions.replace(path, params));
