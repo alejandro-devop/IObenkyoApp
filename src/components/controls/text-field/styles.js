@@ -1,6 +1,13 @@
 export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
+  addOnWrapper: {
+    marginLeft: 10,
+  },
   input: {
+    flex: 1,
     ...mixStyles(['inputBase'], inputs),
+  },
+  inputControlWrapper: {
+    flexDirection: 'row',
   },
   inputDisabled: {
     ...mixStyles(['inputDisabled'], inputs),
@@ -21,5 +28,11 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
   inputSecondary: {
     ...mixStyles(['inputSecondary'], inputs),
   },
+  onlyMask: {
+    justifyContent: 'center',
+  },
   root: {},
+  valueText: {
+    color: '#000',
+  },
 });

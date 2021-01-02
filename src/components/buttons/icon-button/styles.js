@@ -1,6 +1,7 @@
 export default ({palette = {}}) => ({
   icon: {
     fontSize: 24,
+    color: '#FFF',
   },
   root: {
     backgroundColor: palette.secondary,

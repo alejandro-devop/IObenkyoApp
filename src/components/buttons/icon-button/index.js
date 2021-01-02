@@ -4,14 +4,20 @@ import Icon from 'components/base/icon';
 import styles from './styles';
 import {useStyles} from 'theme/hooks';
 
-const IconButton = ({disabled, icon, onPress, style}) => {
+const IconButton = ({
+  classes: otherClasses = {},
+  disabled,
+  icon,
+  onPress,
+  style,
+}) => {
   const Component = !disabled ? TouchableOpacity : View;
   const classes = useStyles(styles);
 
   return (
     <Component
       onPress={() => (!disabled && onPress ? onPress() : null)}
-      style={classes.root}>
+      style={[classes.root, otherClasses.root]}>
       <Icon name={icon} style={[classes.icon, style]} />
     </Component>
   );

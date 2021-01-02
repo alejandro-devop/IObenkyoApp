@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {TextInput} from 'react-native';
 import styles from './styles';
 import {useStyles} from 'theme/hooks';
@@ -12,6 +12,7 @@ import palette from 'theme/palette';
  * This component renders a text field which allows to capture text from the user
  * @author Alejandro <alejandro.devop@gmail.com>
  * @version 1.0.0
+ * @param addOn
  * @param autoCapitalize
  * @param autoCompleteType
  * @param autoCorrect
@@ -23,7 +24,9 @@ import palette from 'theme/palette';
  * @param name
  * @param onBlur
  * @param onChange
+ * @param onPress
  * @param onFocus
+ * @param onlyMask
  * @param onSubmit
  * @param placeholder
  * @param returnKeyType
@@ -34,6 +37,7 @@ import palette from 'theme/palette';
  * @constructor
  */
 const TextField = ({
+  addOn,
   autoCapitalize = 'sentences',
   autoCompleteType,
   autoCorrect,
@@ -46,6 +50,8 @@ const TextField = ({
   onBlur,
   onChange,
   onFocus,
+  onlyMask,
+  onPress,
   onSubmit,
   placeholder,
   returnKeyType = 'done',
@@ -75,33 +81,54 @@ const TextField = ({
           {label}
         </Text>
       )}
-      <TextInput
-        autoCapitalize={autoCapitalize}
-        autoCompleteType={autoCompleteType}
-        autoCorrect={autoCorrect}
-        autoFocus={autoFocus}
-        editable={!disabled}
-        keyboardType={keyboardType}
-        maxLength={maxLength}
-        placeholder={placeholder}
-        placeholderTextColor={!disabled ? palette.primary : palette.gray}
-        onBlur={onBlur}
-        onChangeText={(newValue) => handleChange(newValue)}
-        onFocus={onFocus}
-        onSubmitEditing={onSubmit}
-        returnKeyType={returnKeyType}
-        secureTextEntry={secure}
-        style={classNames(
-          {input: true, inputDisabled: disabled, inputSecondary: secondary},
-          classes,
+      <View style={classes.inputControlWrapper}>
+        {!onlyMask && (
+          <TextInput
+            autoCapitalize={autoCapitalize}
+            autoCompleteType={autoCompleteType}
+            autoCorrect={autoCorrect}
+            autoFocus={autoFocus}
+            editable={!disabled}
+            keyboardType={keyboardType}
+            maxLength={maxLength}
+            placeholder={placeholder}
+            placeholderTextColor={!disabled ? palette.primary : palette.gray}
+            onBlur={onBlur}
+            onChangeText={(newValue) => handleChange(newValue)}
+            onFocus={onFocus}
+            onSubmitEditing={onSubmit}
+            returnKeyType={returnKeyType}
+            secureTextEntry={secure}
+            style={classNames(
+              {input: true, inputDisabled: disabled, inputSecondary: secondary},
+              classes,
+            )}
+            value={value}
+          />
         )}
-        value={value}
-      />
+        {onlyMask && (
+          <TouchableOpacity
+            onPress={onPress}
+            style={classNames(
+              {
+                input: true,
+                onlyMask: true,
+                inputDisabled: disabled,
+                inputSecondary: secondary,
+              },
+              classes,
+            )}>
+            <Text style={classes.valueText}>{value}</Text>
+          </TouchableOpacity>
+        )}
+        {addOn ? <View style={classes.addOnWrapper}>{addOn()}</View> : null}
+      </View>
     </View>
   );
 };
 
 TextField.propTypes = {
+  addOn: PropTypes.func,
   autoCapitalize: PropTypes.oneOf(['sentences', 'characters', 'words', 'none']),
   autoCompleteType: PropTypes.oneOf([
     'off',
@@ -134,6 +161,8 @@ TextField.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
+  onlyMask: PropTypes.bool,
+  onPress: PropTypes.func,
   onSubmit: PropTypes.func,
   placeholder: PropTypes.string,
   returnKeyType: PropTypes.oneOf(['done', 'go', 'next', 'search', 'send']),
