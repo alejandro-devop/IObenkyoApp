@@ -3,6 +3,6 @@ export default ({styles: {general = {}}, mixStyles}) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     paddingHorizontal: 10,
     width: '100%',
-    ...mixStyles(['roundedSquare', 'ph1', 'pv1'], general),
+    ...mixStyles(['roundedSquare', 'ph2', 'pv1'], general),
   },
 });

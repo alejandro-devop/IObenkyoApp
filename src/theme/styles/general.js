@@ -3,6 +3,9 @@ export default StyleSheet.create({
   ph1: {
     paddingHorizontal: 20,
   },
+  ph2: {
+    paddingHorizontal: 40,
+  },
   pv1: {
     paddingVertical: 20,
   },

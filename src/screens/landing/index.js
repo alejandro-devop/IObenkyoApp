@@ -1,17 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import LandingLayout from 'screens/layouts/landing-layout';
 import {Card} from 'components/containers';
-import Text from 'components/base/text';
+import TextField from 'components/controls/text-field';
 
 const LandingScreen = () => {
+  const [form, setForm] = useState({
+    userName: '',
+    password: '',
+  });
+  const onChange = ({target: {name, value}}) => {
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+  const {userName, password} = form;
   return (
     <LandingLayout>
       <Card>
-        <Text>Text</Text>
-        <Text variant="title">Text</Text>
-        <Text variant="subtitle">Text</Text>
-        <Text variant="paragraph">Text</Text>
-        <Text variant="caption">Text</Text>
+        <TextField
+          label="User name"
+          name="userName"
+          onChange={onChange}
+          placeholder="Enter your user name"
+          value={userName}
+        />
+        <TextField
+          label="Password"
+          name="password"
+          onChange={onChange}
+          placeholder="Enter your password"
+          value={password}
+        />
       </Card>
     </LandingLayout>
   );

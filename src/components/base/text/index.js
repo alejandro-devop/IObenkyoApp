@@ -46,7 +46,7 @@ Text.propTypes = {
   center: PropTypes.bool,
   children: PropTypes.node,
   right: PropTypes.bool,
-  style: PropTypes.oneOfType([PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   variant: PropTypes.oneOf([
     'caption',
     'paragraph',

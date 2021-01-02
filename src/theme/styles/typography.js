@@ -1,4 +1,7 @@
 export default {
+  bold: {
+    fontWeight: '600',
+  },
   caption: {
     fontSize: 14,
   },
