@@ -1,10 +1,34 @@
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
+  displayRow: {
+    flexDirection: 'row',
+  },
+  justifyCenter: {
+    justifyContent: 'center',
+  },
+  mb1: {
+    marginBottom: 10,
+  },
+  mb2: {
+    marginBottom: 20,
+  },
+  my1: {
+    marginVertical: 10,
+  },
+  my2: {
+    marginVertical: 20,
+  },
   ph1: {
     paddingHorizontal: 20,
   },
   ph2: {
     paddingHorizontal: 40,
+  },
+  pt1: {
+    paddingTop: 20,
+  },
+  pt2: {
+    paddingTop: 40,
   },
   pv1: {
     paddingVertical: 20,
