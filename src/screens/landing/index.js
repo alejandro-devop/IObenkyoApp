@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import LandingLayout from 'screens/layouts/landing-layout';
 import {Card} from 'components/containers';
 import TextField from 'components/controls/text-field';
+import PasswordField from 'components/controls/password-field';
 
 const LandingScreen = () => {
   const [form, setForm] = useState({
@@ -25,7 +26,7 @@ const LandingScreen = () => {
           placeholder="Enter your user name"
           value={userName}
         />
-        <TextField
+        <PasswordField
           label="Password"
           name="password"
           onChange={onChange}

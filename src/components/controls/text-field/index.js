@@ -21,6 +21,7 @@ import palette from 'theme/palette';
  * @param label
  * @param maxLength
  * @param name
+ * @param onBlur
  * @param onChange
  * @param onFocus
  * @param onSubmit
@@ -41,6 +42,7 @@ const TextField = ({
   label,
   maxLength,
   name,
+  onBlur,
   onChange,
   onFocus,
   onSubmit,
@@ -78,6 +80,7 @@ const TextField = ({
         maxLength={maxLength}
         placeholder={placeholder}
         placeholderTextColor={!disabled ? palette.primary : palette.gray}
+        onBlur={onBlur}
         onChangeText={(newValue) => handleChange(newValue)}
         onFocus={onFocus}
         onSubmitEditing={onSubmit}
@@ -120,6 +123,7 @@ TextField.propTypes = {
   label: PropTypes.string,
   maxLength: PropTypes.number,
   name: PropTypes.string,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onSubmit: PropTypes.func,
