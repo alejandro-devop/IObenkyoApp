@@ -15,10 +15,11 @@ import HabitCategoriesPicker from 'components/controls/habit-categories-picker';
 const currentDate = moment();
 const nextDate = moment().add(1, 'days');
 
-const Form = () => {
+const Form = ({isLoading, onSubmit}) => {
   const classes = useStyles(styles);
   const [form, setForm] = useState({
     category: null,
+    days: 30,
     keep: true,
     isCounter: true,
     counter: 1,
@@ -28,8 +29,13 @@ const Form = () => {
   const onChange = ({target: {name, value}}) => {
     setForm({...form, [name]: value});
   };
-  const {category, keep, counter, isCounter, title, description} = form;
+  const {category, days, keep, counter, isCounter, title, description} = form;
   const isValidCounter = (isCounter && counter > 0) || !isCounter;
+  const handleSubmit = () => {
+    if (onSubmit) {
+      onSubmit(form);
+    }
+  };
   const isValid =
     isValidCounter &&
     !isEmpty(title) &&
@@ -78,6 +84,14 @@ const Form = () => {
             value={counter}
           />
         )}
+        <NumberPicker
+          label="Days"
+          name="days"
+          min={0}
+          secondary
+          onChange={onChange}
+          value={days}
+        />
         <View style={[classes.row, classes.rowHorizontal]}>
           <RadioButton
             label="Keep"
@@ -93,7 +107,12 @@ const Form = () => {
           />
         </View>
         <View style={classes.actions}>
-          <Button disabled={!isValid}>Save</Button>
+          <Button
+            disabled={!isValid}
+            isLoading={isLoading}
+            onPress={handleSubmit}>
+            Save
+          </Button>
           <Button secondary>Cancel</Button>
         </View>
       </ScrollView>
