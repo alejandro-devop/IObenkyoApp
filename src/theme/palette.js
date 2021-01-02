@@ -7,6 +7,7 @@ const palette = {
   primaryLight: '#6ec6ff',
   primaryTransparent: 'rgba(33, 150, 243, 0.2)',
   secondary: '#424242',
+  secondaryTransparent: 'rgba(66, 66, 66, 0.6)',
   secondaryDark: '#212121',
   secondaryLight: '#757575',
   success: '#00e676',

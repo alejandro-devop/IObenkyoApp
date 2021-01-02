@@ -7,4 +7,7 @@ export default () => ({
   row: {
     marginVertical: 10,
   },
+  rowHorizontal: {
+    flexDirection: 'row',
+  },
 });
