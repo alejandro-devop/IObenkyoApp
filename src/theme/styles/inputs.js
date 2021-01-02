@@ -12,6 +12,9 @@ export default {
     backgroundColor: palette.primaryTransparent,
     fontSize: 20,
   },
+  inputSecondary: {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  },
   inputDisabled: {
     backgroundColor: palette.grayTransparent,
     opacity: 0.6,
@@ -21,6 +24,9 @@ export default {
     textAlign: 'center',
     marginBottom: 2,
     paddingLeft: 10,
+  },
+  labelSecondary: {
+    color: '#FFF',
   },
   labelDisabled: {
     color: palette.gray,

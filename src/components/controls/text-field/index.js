@@ -28,6 +28,7 @@ import palette from 'theme/palette';
  * @param placeholder
  * @param returnKeyType
  * @param secure
+ * @param secondary
  * @param value
  * @returns {*}
  * @constructor
@@ -49,6 +50,7 @@ const TextField = ({
   placeholder,
   returnKeyType = 'done',
   secure,
+  secondary,
   value,
 }) => {
   const classes = useStyles(styles);
@@ -66,7 +68,10 @@ const TextField = ({
     <View style={classes.inputWrapper}>
       {label && (
         <Text
-          style={classNames({label: true, labelDisabled: disabled}, classes)}>
+          style={classNames(
+            {label: true, labelSecondary: secondary, labelDisabled: disabled},
+            classes,
+          )}>
           {label}
         </Text>
       )}
@@ -86,7 +91,10 @@ const TextField = ({
         onSubmitEditing={onSubmit}
         returnKeyType={returnKeyType}
         secureTextEntry={secure}
-        style={classNames({input: true, inputDisabled: disabled}, classes)}
+        style={classNames(
+          {input: true, inputDisabled: disabled, inputSecondary: secondary},
+          classes,
+        )}
         value={value}
       />
     </View>
@@ -130,6 +138,7 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   returnKeyType: PropTypes.oneOf(['done', 'go', 'next', 'search', 'send']),
   secure: PropTypes.bool,
+  secondary: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 

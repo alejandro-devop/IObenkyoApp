@@ -12,8 +12,14 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
     ...mixStyles(['label'], inputs),
     ...mixStyles(['paragraph', 'bold'], typography),
   },
+  labelSecondary: {
+    ...mixStyles(['labelSecondary'], inputs),
+  },
   labelDisabled: {
     ...mixStyles(['labelDisabled'], inputs),
+  },
+  inputSecondary: {
+    ...mixStyles(['inputSecondary'], inputs),
   },
   root: {},
 });
