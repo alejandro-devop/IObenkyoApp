@@ -1,3 +1,4 @@
+import DashboardScreen from 'screens/dashboard';
 import LandingScreen from 'screens/landing';
 
-export {LandingScreen};
+export {DashboardScreen, LandingScreen};
