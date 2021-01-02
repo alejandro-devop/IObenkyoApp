@@ -3,6 +3,9 @@ export default StyleSheet.create({
   displayRow: {
     flexDirection: 'row',
   },
+  full: {
+    flex: 1,
+  },
   justifyCenter: {
     justifyContent: 'center',
   },
