@@ -30,10 +30,14 @@ export const useGet = (path, options = {}) => {
   const {Api, data, loading, setData, setLoading} = useRequest({
     startLoading: true,
   });
+  const {onCompleted} = options;
   const sendRequest = useRef();
   const requestHandler = async () => {
     const response = await Api.doGet(path, {...options});
     setData(response);
+    if (onCompleted) {
+      onCompleted(response);
+    }
     setLoading(false);
   };
 

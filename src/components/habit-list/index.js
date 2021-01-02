@@ -7,18 +7,25 @@ import {ScrollView} from 'components/commons';
 import HabitItem from './habit-item';
 import FloatingButton from 'components/buttons/floating-button';
 import useNavigate from 'hooks/use-navigate';
+import useSession from 'pkgs/session/hooks/useSession';
 
 const HabitList = () => {
   const classes = useStyles(styles);
   const {navigation} = useNavigate();
-  const {data = []} = useGet('habits.list');
+  const {session = {}, set} = useSession();
+  const {habits = []} = session;
+  useGet('habits.list', {
+    onCompleted: (data) => {
+      set('habits', data);
+    },
+  });
   const openAdd = () => {
     navigation.navigate('add-habit');
   };
   return (
     <View style={classes.root}>
       <ScrollView style={classes.scroll}>
-        {data.map((item, key) => (
+        {habits.map((item, key) => (
           <HabitItem
             delay={100 * key}
             key={`habit-${item.id}`}

@@ -3,9 +3,13 @@ import Form from './form';
 import useNavigate from 'hooks/use-navigate';
 import {usePost} from 'pkgs/api/hooks';
 import moment from 'moment';
+import useSession from 'pkgs/session/hooks/useSession';
 
 const HabitAdd = () => {
   const {goBack} = useNavigate();
+  const {session = {}, set} = useSession();
+  const {habits = []} = session;
+
   const [loading, sendRequest] = usePost('habits.save');
   const handleSubmit = async (form) => {
     try {
@@ -20,7 +24,7 @@ const HabitAdd = () => {
         title,
       } = form;
       const goalDateObj = moment(startDate, 'YYYY-MM-DD').add(days, 'days');
-      await sendRequest({
+      const savedHabit = await sendRequest({
         category,
         counter_goal: counter,
         description,
@@ -32,6 +36,7 @@ const HabitAdd = () => {
         streak_goal: days,
         title,
       });
+      set('habits', [...habits, savedHabit]);
       // Todo: print messages
       goBack();
     } catch (e) {
