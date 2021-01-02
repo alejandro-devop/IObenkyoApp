@@ -8,6 +8,9 @@ export default {
     update: '/api/habits',
     remove: '/api/habits',
   },
+  habitCategories: {
+    list: '/api/habits/categories',
+  },
   test: {
     checkApi: '/api/test/check',
     checkApiParams: '/api/test/check/{id}',

@@ -10,6 +10,7 @@ import RadioButton from 'components/controls/radio-button';
 import NumberPicker from 'components/controls/number-picker';
 import {isEmpty} from 'utils';
 import Button from 'components/buttons/button';
+import HabitCategoriesPicker from 'components/controls/habit-categories-picker';
 
 const currentDate = moment();
 const nextDate = moment().add(1, 'days');
@@ -17,6 +18,7 @@ const nextDate = moment().add(1, 'days');
 const Form = () => {
   const classes = useStyles(styles);
   const [form, setForm] = useState({
+    category: null,
     keep: true,
     isCounter: true,
     counter: 1,
@@ -26,9 +28,13 @@ const Form = () => {
   const onChange = ({target: {name, value}}) => {
     setForm({...form, [name]: value});
   };
-  const {keep, counter, isCounter, title, description} = form;
+  const {category, keep, counter, isCounter, title, description} = form;
   const isValidCounter = (isCounter && counter > 0) || !isCounter;
-  const isValid = isValidCounter && !isEmpty(title) && !isEmpty(description);
+  const isValid =
+    isValidCounter &&
+    !isEmpty(title) &&
+    !isEmpty(description) &&
+    !isEmpty(category);
   return (
     <View style={classes.root}>
       <ScrollView>
@@ -45,6 +51,13 @@ const Form = () => {
           onChange={onChange}
           secondary
           value={description}
+        />
+        <HabitCategoriesPicker
+          label="Category"
+          secondary
+          name="category"
+          onChange={onChange}
+          value={category}
         />
         <View style={classes.row}>
           <Switch
