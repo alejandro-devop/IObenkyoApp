@@ -7,6 +7,7 @@ const palette = {
   primaryLight: '#6ec6ff',
   primaryTransparent: 'rgba(33, 150, 243, 0.2)',
   secondary: 'red',
+  error: '#d50000',
 };
 
 export default palette;
