@@ -1,4 +1,7 @@
-export default () => ({
+export default ({styles: {general = {}}, mixStyles}) => ({
+  actions: {
+    ...mixStyles(['mt5'], general),
+  },
   root: {
     flex: 1,
     paddingHorizontal: 20,

@@ -2,6 +2,9 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
   addOnWrapper: {
     marginLeft: 10,
   },
+  preOnWrapper: {
+    marginRight: 10,
+  },
   input: {
     flex: 1,
     ...mixStyles(['inputBase'], inputs),
@@ -11,6 +14,9 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
   },
   inputDisabled: {
     ...mixStyles(['inputDisabled'], inputs),
+  },
+  inputCenter: {
+    textAlign: 'center',
   },
   inputWrapper: {
     ...mixStyles(['inputWrapper'], inputs),

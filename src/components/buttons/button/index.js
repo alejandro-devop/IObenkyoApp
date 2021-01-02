@@ -5,14 +5,19 @@ import classNames from 'utils/classNames';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
 
-const Button = ({children, disabled, isLoading, onPress}) => {
+const Button = ({children, disabled, isLoading, onPress, secondary}) => {
   const classes = useStyles(styles);
   const Component = disabled || isLoading ? View : TouchableOpacity;
   return (
     <Component
       onPress={() => (!disabled && !isLoading && onPress ? onPress() : null)}
       style={classNames(
-        {root: true, rootLoading: isLoading, rootDisabled: disabled},
+        {
+          root: true,
+          rootLoading: isLoading,
+          rootSecondary: secondary,
+          rootDisabled: disabled,
+        },
         classes,
       )}>
       <Text

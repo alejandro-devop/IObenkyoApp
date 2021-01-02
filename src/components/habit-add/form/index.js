@@ -5,9 +5,12 @@ import {ScrollView} from 'components/commons';
 import styles from './styles';
 import TextField from 'components/controls/text-field';
 import Switch from 'components/controls/switch';
-import DatePicker from 'components/controls/date-picker';
 import moment from 'moment';
 import RadioButton from 'components/controls/radio-button';
+import NumberPicker from 'components/controls/number-picker';
+import {isEmpty} from 'utils';
+import Button from 'components/buttons/button';
+
 const currentDate = moment();
 const nextDate = moment().add(1, 'days');
 
@@ -15,21 +18,53 @@ const Form = () => {
   const classes = useStyles(styles);
   const [form, setForm] = useState({
     keep: true,
+    isCounter: true,
+    counter: 1,
     startDate: currentDate.format('YYYY-MM-DD'),
     goalDate: nextDate.format('YYYY-MM-DD'),
   });
   const onChange = ({target: {name, value}}) => {
     setForm({...form, [name]: value});
   };
-  const {keep, startDate, goalDate} = form;
+  const {keep, counter, isCounter, title, description} = form;
+  const isValidCounter = (isCounter && counter > 0) || !isCounter;
+  const isValid = isValidCounter && !isEmpty(title) && !isEmpty(description);
   return (
     <View style={classes.root}>
       <ScrollView>
-        <TextField label="Title" secondary />
-        <TextField label="Description" secondary />
+        <TextField
+          label="Title"
+          name="title"
+          onChange={onChange}
+          secondary
+          value={title}
+        />
+        <TextField
+          label="Description"
+          name="description"
+          onChange={onChange}
+          secondary
+          value={description}
+        />
         <View style={classes.row}>
-          <Switch label="Is counter?" secondary />
+          <Switch
+            label="Is counter?"
+            secondary
+            name="isCounter"
+            value={isCounter}
+            onChange={onChange}
+          />
         </View>
+        {isCounter && (
+          <NumberPicker
+            label="Times"
+            name="counter"
+            min={1}
+            secondary
+            onChange={onChange}
+            value={counter}
+          />
+        )}
         <View style={[classes.row, classes.rowHorizontal]}>
           <RadioButton
             label="Keep"
@@ -44,8 +79,10 @@ const Form = () => {
             onChange={() => onChange({target: {name: 'keep', value: false}})}
           />
         </View>
-        <DatePicker label="Start date" secondary value={startDate} />
-        <DatePicker label="Goal date" secondary value={goalDate} />
+        <View style={classes.actions}>
+          <Button disabled={!isValid}>Save</Button>
+          <Button secondary>Cancel</Button>
+        </View>
       </ScrollView>
     </View>
   );

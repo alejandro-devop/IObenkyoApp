@@ -17,6 +17,7 @@ import palette from 'theme/palette';
  * @param autoCompleteType
  * @param autoCorrect
  * @param autoFocus
+ * @param center
  * @param keyboardType
  * @param disabled
  * @param label
@@ -29,6 +30,7 @@ import palette from 'theme/palette';
  * @param onlyMask
  * @param onSubmit
  * @param placeholder
+ * @param preOn
  * @param returnKeyType
  * @param secure
  * @param secondary
@@ -42,6 +44,7 @@ const TextField = ({
   autoCompleteType,
   autoCorrect,
   autoFocus,
+  center,
   keyboardType,
   disabled,
   label,
@@ -54,6 +57,7 @@ const TextField = ({
   onPress,
   onSubmit,
   placeholder,
+  preOn,
   returnKeyType = 'done',
   secure,
   secondary,
@@ -82,6 +86,7 @@ const TextField = ({
         </Text>
       )}
       <View style={classes.inputControlWrapper}>
+        {preOn ? <View style={classes.preOnWrapper}>{preOn()}</View> : null}
         {!onlyMask && (
           <TextInput
             autoCapitalize={autoCapitalize}
@@ -100,7 +105,12 @@ const TextField = ({
             returnKeyType={returnKeyType}
             secureTextEntry={secure}
             style={classNames(
-              {input: true, inputDisabled: disabled, inputSecondary: secondary},
+              {
+                input: true,
+                inputCenter: center,
+                inputDisabled: disabled,
+                inputSecondary: secondary,
+              },
               classes,
             )}
             value={value}
@@ -118,7 +128,13 @@ const TextField = ({
               },
               classes,
             )}>
-            <Text style={classes.valueText}>{value}</Text>
+            <Text
+              style={classNames(
+                {valueText: true, valueTextCenter: center},
+                classes,
+              )}>
+              {value}
+            </Text>
           </TouchableOpacity>
         )}
         {addOn ? <View style={classes.addOnWrapper}>{addOn()}</View> : null}
@@ -146,6 +162,7 @@ TextField.propTypes = {
     'cc-exp-year',
   ]),
   autoFocus: PropTypes.bool,
+  center: PropTypes.bool,
   disabled: PropTypes.bool,
   keyboardType: PropTypes.oneOf([
     'default',
@@ -165,6 +182,7 @@ TextField.propTypes = {
   onPress: PropTypes.func,
   onSubmit: PropTypes.func,
   placeholder: PropTypes.string,
+  preOn: PropTypes.func,
   returnKeyType: PropTypes.oneOf(['done', 'go', 'next', 'search', 'send']),
   secure: PropTypes.bool,
   secondary: PropTypes.bool,

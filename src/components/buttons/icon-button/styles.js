@@ -11,4 +11,7 @@ export default ({palette = {}}) => ({
     width: 50,
     height: 50,
   },
+  rootDisabled: {
+    opacity: 0.6,
+  },
 });

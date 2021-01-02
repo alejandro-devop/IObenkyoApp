@@ -3,6 +3,7 @@ import {TouchableOpacity, View} from 'react-native';
 import Icon from 'components/base/icon';
 import styles from './styles';
 import {useStyles} from 'theme/hooks';
+import classNames from 'utils/classNames';
 
 const IconButton = ({
   classes: otherClasses = {},
@@ -17,7 +18,10 @@ const IconButton = ({
   return (
     <Component
       onPress={() => (!disabled && onPress ? onPress() : null)}
-      style={[classes.root, otherClasses.root]}>
+      style={[
+        classNames({root: true, rootDisabled: disabled}, classes),
+        otherClasses.root,
+      ]}>
       <Icon name={icon} style={[classes.icon, style]} />
     </Component>
   );
