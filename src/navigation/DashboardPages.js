@@ -24,7 +24,13 @@ const DashboardPages = () => {
       <Tab.Screen name="agenda" component={AgendaPages} />
       <Tab.Screen name="alerts" component={AlertPages} />
       <Tab.Screen name="stats" component={StatsPages} />
-      <Tab.Screen name="habits" component={HabitPages} />
+      <Tab.Screen
+        name="habits"
+        component={HabitPages}
+        options={{
+          unmountOnBlur: true,
+        }}
+      />
     </Tab.Navigator>
   );
 };

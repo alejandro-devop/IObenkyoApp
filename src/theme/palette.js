@@ -9,6 +9,8 @@ const palette = {
   secondary: '#424242',
   secondaryDark: '#212121',
   secondaryLight: '#757575',
+  success: '#00e676',
+  danger: '#d50000',
   error: '#d50000',
 };
 
