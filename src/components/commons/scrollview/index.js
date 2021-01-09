@@ -11,16 +11,27 @@ import {useStyles} from 'theme/hooks';
  * @version 1.0.0
  * @param children
  * @param disableScroll
+ * @param onScroll
+ * @param scrollEventThrottle
  * @param refreshControl
  * @returns {*}
  * @constructor
  */
-const ScrollView = ({children, useKeyboard, refreshControl, style}) => {
+const ScrollView = ({
+  children,
+  useKeyboard,
+  onScroll,
+  scrollEventThrottle,
+  refreshControl,
+  style,
+}) => {
   const classes = useStyles(styles);
   if (useKeyboard) {
     return (
       <KeyboardAwareScrollView
         refreshControl={refreshControl}
+        onScroll={onScroll}
+        scrollEventThrottle={scrollEventThrottle}
         showsVerticalScrollIndicator={false}
         style={[classes.root, style]}
         contentContainerStyle={classes.scroll}>
@@ -31,6 +42,8 @@ const ScrollView = ({children, useKeyboard, refreshControl, style}) => {
   return (
     <ScrollViewBase
       refreshControl={refreshControl}
+      onScroll={onScroll}
+      scrollEventThrottle={scrollEventThrottle}
       showsVerticalScrollIndicator={false}
       style={[classes.root, style]}
       contentContainerStyle={classes.scroll}>

@@ -10,6 +10,7 @@ export default {
   },
   habitCategories: {
     list: '/api/habits/categories',
+    save: '/api/habits/categories',
   },
   followups: {
     mark: '/api/habits/follow-up/{habit}'

@@ -44,7 +44,7 @@ const HabitFollowup = ({
       });
       if (onSaved) {
         onSaved(response);
-      }````
+      }
     } catch (e) {
       // Todo: Handle error
     }
@@ -55,7 +55,7 @@ const HabitFollowup = ({
       // Todo: Handle error
     }
   };
-  console.log('Story val: ', todayFollowup);
+
   return (
     <View style={classes.root}>
       <View style={classes.row}>

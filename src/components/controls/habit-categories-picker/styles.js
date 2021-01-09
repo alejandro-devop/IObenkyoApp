@@ -1,4 +1,4 @@
-export default ({styles: {inputs, typography}, mixStyles}) => ({
+export default ({styles: {inputs, general, typography}, mixStyles}) => ({
   label: {
     ...mixStyles(['label'], inputs),
     ...mixStyles(['paragraph', 'bold'], typography),
@@ -12,5 +12,8 @@ export default ({styles: {inputs, typography}, mixStyles}) => ({
   },
   root: {
     marginBottom: 20,
+  },
+  actionsWrapper: {
+    ...mixStyles(['displayRow', 'justifyCenter', 'mt2'], general),
   },
 });

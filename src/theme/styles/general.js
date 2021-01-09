@@ -15,6 +15,9 @@ export default StyleSheet.create({
   mb2: {
     marginBottom: 20,
   },
+  mt2: {
+    marginTop: 20,
+  },
   mt5: {
     marginTop: 50,
   },

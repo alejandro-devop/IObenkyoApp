@@ -17,9 +17,16 @@ export default ({palette}) => ({
   buttonWrapperDanger: {
     backgroundColor: palette.dangerTransparent,
   },
+  buttonWrapperSM: {
+    width: 40,
+    height: 40,
+  },
   icon: {
     color: '#FFF',
     fontSize: 35,
+  },
+  iconSM: {
+    fontSize: 25,
   },
   label: {
     marginTop: 5,
