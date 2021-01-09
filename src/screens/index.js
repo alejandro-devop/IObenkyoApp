@@ -5,6 +5,7 @@ import HabitsScreen from 'screens/habits';
 import StatsScreen from 'screens/stats';
 import AlertsScreen from 'screens/alerts';
 import HabitsAddScreen from 'screens/habits-add';
+import HabitViewScreen from 'screens/habit-view';
 
 export {
   AgendaScreen,
@@ -12,6 +13,7 @@ export {
   DashboardScreen,
   HabitsScreen,
   HabitsAddScreen,
+  HabitViewScreen,
   LandingScreen,
   StatsScreen,
 };

@@ -27,9 +27,9 @@ const DashboardPages = () => {
       <Tab.Screen
         name="habits"
         component={HabitsScreen}
-        options={{
-          unmountOnBlur: true,
-        }}
+        // options={{
+        //   unmountOnBlur: true,
+        // }}
       />
     </Tab.Navigator>
   );

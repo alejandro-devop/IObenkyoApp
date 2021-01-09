@@ -6,6 +6,7 @@ export default ({palette = {}, styles: {typography = {}}, mixStyles}) => ({
     paddingHorizontal: 30,
     paddingVertical: 14,
     marginBottom: 10,
+    minWidth: 200,
   },
   rootSecondary: {
     backgroundColor: palette.secondary,

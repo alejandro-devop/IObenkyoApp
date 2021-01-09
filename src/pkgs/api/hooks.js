@@ -24,12 +24,13 @@ export const useRequest = (options = {}) => {
  *
  * @param path
  * @param options
- * @returns {{data: *, loading: *}}
+ * @returns {{data: *, loading: boolean, refresh: Promise, refreshing: boolean}}
  */
 export const useGet = (path, options = {}) => {
   const {Api, data, loading, setData, setLoading} = useRequest({
     startLoading: true,
   });
+  const [refreshing, setRefreshing] = useState(false);
   const {onCompleted} = options;
   const sendRequest = useRef();
   const requestHandler = async () => {
@@ -39,6 +40,12 @@ export const useGet = (path, options = {}) => {
       onCompleted(response);
     }
     setLoading(false);
+  };
+
+  const refresh = async () => {
+    setRefreshing(true);
+    await sendRequest.current();
+    setRefreshing(false);
   };
 
   useEffect(() => {
@@ -52,6 +59,8 @@ export const useGet = (path, options = {}) => {
   return {
     data,
     loading,
+    refresh,
+    refreshing,
   };
 };
 

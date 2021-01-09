@@ -75,6 +75,7 @@ class ApiService {
     }
     try {
       const url = this.resolveUrl(path, replace);
+      console.log('The url: ', `${this.server}${url}`);
       if (url === false) {
         throw new Error(`Url ${path} does not exists`);
       }

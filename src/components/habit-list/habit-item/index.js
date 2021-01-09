@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import {useStyles} from 'theme/hooks';
 import Icon from 'components/base/icon';
@@ -19,30 +19,32 @@ const HabitItem = ({delay = 0, habitItem = {}, onPress}) => {
   } = habitItem;
   return (
     <Slide delay={delay} direction="right" style={classes.root}>
-      <View style={classes.iconWrapper}>
-        <Icon name={category.icon} />
-      </View>
-      <View style={classes.textWrapper}>
-        <Text style={classes.text}>{title}</Text>
-      </View>
-      <View style={classes.streakWrapper}>
-        <Text style={classes.textCounter}>
-          {streak} / {goal}
-        </Text>
-      </View>
-      <View style={classes.typeWrapper}>
-        <Icon
-          name={keep ? 'plus' : 'minus'}
-          style={classNames(
-            {
-              typeIcon: true,
-              typeIconKeep: Boolean(keep),
-              typeIconAvoid: Boolean(avoid),
-            },
-            classes,
-          )}
-        />
-      </View>
+      <TouchableOpacity onPress={onPress} style={classes.wrapper}>
+        <View style={classes.iconWrapper}>
+          <Icon name={category.icon} />
+        </View>
+        <View style={classes.textWrapper}>
+          <Text style={classes.text}>{title}</Text>
+        </View>
+        <View style={classes.streakWrapper}>
+          <Text style={classes.textCounter}>
+            {streak} / {goal}
+          </Text>
+        </View>
+        <View style={classes.typeWrapper}>
+          <Icon
+            name={keep ? 'plus' : 'minus'}
+            style={classNames(
+              {
+                typeIcon: true,
+                typeIconKeep: Boolean(keep),
+                typeIconAvoid: Boolean(avoid),
+              },
+              classes,
+            )}
+          />
+        </View>
+      </TouchableOpacity>
     </Slide>
   );
 };

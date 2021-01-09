@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import DashboardPages from './DashboardPages';
-import {HabitsAddScreen} from 'screens';
+import {HabitsAddScreen, HabitViewScreen} from 'screens';
 const Stack = createStackNavigator();
 
 const AuthenticationPages = () => {
@@ -13,6 +13,7 @@ const AuthenticationPages = () => {
       initialRouteName={'dashboard-pages'}>
       <Stack.Screen name="dashboard-pages" component={DashboardPages} />
       <Stack.Screen name="add-habit" component={HabitsAddScreen} />
+      <Stack.Screen name="view-habit" component={HabitViewScreen} />
     </Stack.Navigator>
   );
 };

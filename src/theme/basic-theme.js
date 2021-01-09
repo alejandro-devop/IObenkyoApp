@@ -3,5 +3,6 @@ import styles from './styles';
 export default {
   palette,
   styles,
-  variables: {},
+  variables: {
+  },
 };

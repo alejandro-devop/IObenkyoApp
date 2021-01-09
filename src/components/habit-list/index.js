@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {RefreshControl, View} from 'react-native';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
 import {useGet} from 'pkgs/api/hooks';
@@ -14,7 +14,7 @@ const HabitList = () => {
   const {navigation} = useNavigate();
   const {session = {}, set} = useSession();
   const {habits = []} = session;
-  useGet('habits.list', {
+  const {refresh, refreshing} = useGet('habits.list', {
     onCompleted: (data) => {
       set('habits', data);
     },
@@ -22,14 +22,26 @@ const HabitList = () => {
   const openAdd = () => {
     navigation.navigate('add-habit');
   };
+  const handleHabitSelect = (item) => {
+    set('selectedHabit', item);
+    navigation.navigate('view-habit');
+  };
+  const handleRefresh = () => {
+    refresh();
+  };
   return (
     <View style={classes.root}>
-      <ScrollView style={classes.scroll}>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
+        style={classes.scroll}>
         {habits.map((item, key) => (
           <HabitItem
             delay={100 * key}
             key={`habit-${item.id}`}
             habitItem={item}
+            onPress={() => handleHabitSelect(item)}
           />
         ))}
       </ScrollView>

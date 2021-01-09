@@ -9,12 +9,10 @@ export default ({palette = {}, styles: {general = {}}, mixStyles}) => ({
   },
   root: {
     backgroundColor: palette.secondary,
-    alignItems: 'center',
     borderRadius: 40,
     marginBottom: 8,
     paddingRight: 10,
     width: '100%',
-    ...mixStyles(['displayRow'], general),
   },
   text: {
     fontSize: 16,
@@ -35,5 +33,9 @@ export default ({palette = {}, styles: {general = {}}, mixStyles}) => ({
   },
   typeIconAvoid: {
     color: palette.danger,
+  },
+  wrapper: {
+    alignItems: 'center',
+    ...mixStyles(['displayRow'], general),
   },
 });
