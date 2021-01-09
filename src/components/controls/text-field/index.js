@@ -22,6 +22,8 @@ import palette from 'theme/palette';
  * @param disabled
  * @param label
  * @param maxLength
+ * @param multiline
+ * @param lines
  * @param name
  * @param onBlur
  * @param onChange
@@ -44,11 +46,14 @@ const TextField = ({
   autoCompleteType,
   autoCorrect,
   autoFocus,
+  blurOnSubmit,
   center,
   keyboardType,
   disabled,
   label,
+  lines,
   maxLength,
+  multiline,
   name,
   onBlur,
   onChange,
@@ -89,10 +94,13 @@ const TextField = ({
         {preOn ? <View style={classes.preOnWrapper}>{preOn()}</View> : null}
         {!onlyMask && (
           <TextInput
+            multiline={multiline}
+            numberOfLines={lines}
             autoCapitalize={autoCapitalize}
             autoCompleteType={autoCompleteType}
             autoCorrect={autoCorrect}
             autoFocus={autoFocus}
+            blurOnSubmit={blurOnSubmit}
             editable={!disabled}
             keyboardType={keyboardType}
             maxLength={maxLength}
@@ -104,15 +112,23 @@ const TextField = ({
             onSubmitEditing={onSubmit}
             returnKeyType={returnKeyType}
             secureTextEntry={secure}
-            style={classNames(
-              {
-                input: true,
-                inputCenter: center,
-                inputDisabled: disabled,
-                inputSecondary: secondary,
-              },
-              classes,
-            )}
+            style={[
+              classNames(
+                {
+                  input: true,
+                  inputCenter: center,
+                  inputDisabled: disabled,
+                  inputSecondary: secondary,
+                },
+                classes,
+              ),
+              multiline
+                ? {
+                    borderRadius: 20,
+                    height: lines ? lines * 35 : null,
+                  }
+                : {},
+            ]}
             value={value}
           />
         )}
@@ -173,7 +189,9 @@ TextField.propTypes = {
     'phone-pad',
   ]),
   label: PropTypes.string,
+  lines: PropTypes.number,
   maxLength: PropTypes.number,
+  multiline: PropTypes.bool,
   name: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

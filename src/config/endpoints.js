@@ -11,6 +11,9 @@ export default {
   habitCategories: {
     list: '/api/habits/categories',
   },
+  followups: {
+    mark: '/api/habits/follow-up/{habit}'
+  },
   test: {
     checkApi: '/api/test/check',
     checkApiParams: '/api/test/check/{id}',

@@ -31,15 +31,17 @@ export const useGet = (path, options = {}) => {
     startLoading: true,
   });
   const [refreshing, setRefreshing] = useState(false);
-  const {onCompleted} = options;
+  const {onCompleted, lazy} = options;
   const sendRequest = useRef();
-  const requestHandler = async () => {
-    const response = await Api.doGet(path, {...options});
+
+  const requestHandler = async (optionsOverride = {}) => {
+    const response = await Api.doGet(path, {...options, optionsOverride});
     setData(response);
     if (onCompleted) {
       onCompleted(response);
     }
     setLoading(false);
+    return response;
   };
 
   const refresh = async () => {
@@ -48,16 +50,23 @@ export const useGet = (path, options = {}) => {
     setRefreshing(false);
   };
 
+  const getData = async (optionsOverride = {}) => {
+    return await requestHandler(optionsOverride);
+  };
+
   useEffect(() => {
     sendRequest.current = requestHandler;
   });
 
   useEffect(() => {
-    sendRequest.current();
-  }, []);
+    if (!lazy) {
+      sendRequest.current();
+    }
+  }, [lazy]);
 
   return {
     data,
+    getData,
     loading,
     refresh,
     refreshing,

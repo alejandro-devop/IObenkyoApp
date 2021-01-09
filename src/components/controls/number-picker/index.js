@@ -10,6 +10,7 @@ const NumberPicker = ({
   max,
   onChange,
   secondary,
+  enableEdit,
   step = 1,
   value = 0,
 }) => {
@@ -67,6 +68,8 @@ const NumberPicker = ({
         />
       )}
       center
+      onlyMask={!enableEdit}
+      keyboardType={'number-pad'}
       label={label}
       preOn={() => (
         <IconButton

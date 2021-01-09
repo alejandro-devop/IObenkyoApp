@@ -2,23 +2,22 @@ import React from 'react';
 import {RefreshControl, View} from 'react-native';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
-import {useGet} from 'pkgs/api/hooks';
 import {ScrollView} from 'components/commons';
 import HabitItem from './habit-item';
 import FloatingButton from 'components/buttons/floating-button';
 import useNavigate from 'hooks/use-navigate';
 import useSession from 'pkgs/session/hooks/useSession';
+import useHabits from 'hooks/use-habits';
 
 const HabitList = () => {
   const classes = useStyles(styles);
   const {navigation} = useNavigate();
-  const {session = {}, set} = useSession();
-  const {habits = []} = session;
-  const {refresh, refreshing} = useGet('habits.list', {
-    onCompleted: (data) => {
-      set('habits', data);
-    },
-  });
+  const {
+    set,
+    session: {},
+  } = useSession();
+  const {habits = [], refresh, refreshing} = useHabits();
+
   const openAdd = () => {
     navigation.navigate('add-habit');
   };
