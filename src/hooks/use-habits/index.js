@@ -1,5 +1,6 @@
 import useSession from 'pkgs/session/hooks/useSession';
 import {useGet} from 'pkgs/api/hooks';
+import {isEmpty} from 'utils';
 
 const useHabits = (options = {}) => {
   const {lazy} = options;
@@ -17,7 +18,7 @@ const useHabits = (options = {}) => {
   });
 
   return {
-    habits,
+    habits: !isEmpty(habits) ? habits : [],
     loading,
     refresh,
     refreshing,

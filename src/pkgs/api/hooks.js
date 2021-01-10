@@ -2,6 +2,14 @@ import {ApiContext} from 'pkgs/api/ApiProvider';
 
 import {useContext, useEffect, useRef, useState} from 'react';
 
+export const useApi = () => {
+  const {Api, clearToken} = useContext(ApiContext);
+  return {
+    Api,
+    clearToken,
+  };
+};
+
 /**
  * Hook to reuse states from the request.
  * @returns {{setLoading: *, Api: ApiService, loading: *}}
@@ -10,7 +18,7 @@ export const useRequest = (options = {}) => {
   const {startLoading = false} = options;
   const [loading, setLoading] = useState(startLoading);
   const [data, setData] = useState([]);
-  const Api = useContext(ApiContext);
+  const {Api} = useContext(ApiContext);
   return {
     Api,
     data,

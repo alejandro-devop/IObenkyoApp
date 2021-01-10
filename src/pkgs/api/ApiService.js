@@ -75,11 +75,11 @@ class ApiService {
     }
     try {
       const url = this.resolveUrl(path, replace);
-      console.log('The url: ', `${this.server}${url}`);
       if (url === false) {
         throw new Error(`Url ${path} does not exists`);
       }
-      const response = await fetch(`${this.server}${url}`, {
+
+      const requestPayload = {
         method,
         headers: {
           accept: 'application/json',
@@ -88,7 +88,14 @@ class ApiService {
           ...headers,
         },
         body: method === 'GET' ? null : JSON.stringify(payload),
-      });
+      };
+      const requestUrl = `${this.server}${url}`;
+      console.log(
+        'Request payload: ',
+        requestUrl,
+        JSON.stringify(requestPayload),
+      );
+      const response = await fetch(requestUrl, requestPayload);
       const {status} = response;
       // Todo: handle statuses
       if (response && ![404].includes(status)) {

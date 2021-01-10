@@ -65,7 +65,7 @@ const SessionProvider = ({children, Loader}) => {
         },
         clear: () => {
           SessionHandler.clear();
-          setSession(SessionHandler.getSession());
+          setSession({});
         },
       }}>
       {children}

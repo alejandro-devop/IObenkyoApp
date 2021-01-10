@@ -24,7 +24,15 @@ const ApiClient = ({children, server = '', endpoints = {}}) => {
   if (token && !ApiService.token) {
     ApiService.setToken(token);
   }
-  return <ContextProvider value={ApiService}>{children}</ContextProvider>;
+  return (
+    <ContextProvider
+      value={{
+        Api: ApiService,
+        clearToken: () => (ApiService.token = null),
+      }}>
+      {children}
+    </ContextProvider>
+  );
 };
 
 export default ApiClient;

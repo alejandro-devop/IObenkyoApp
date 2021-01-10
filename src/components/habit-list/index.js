@@ -28,6 +28,7 @@ const HabitList = () => {
   const handleRefresh = () => {
     refresh();
   };
+  console.log('Habits: ', habits);
   return (
     <View style={classes.root}>
       <ScrollView
