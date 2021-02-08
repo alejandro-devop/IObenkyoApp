@@ -28,22 +28,22 @@ const HabitList = () => {
   const handleRefresh = () => {
     refresh();
   };
-  console.log('Habits: ', habits);
   return (
     <View style={classes.root}>
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
-        }
-        style={classes.scroll}>
-        {habits.map((item, key) => (
-          <HabitItem
-            delay={100 * key}
-            key={`habit-${item.id}`}
-            habitItem={item}
-            onPress={() => handleHabitSelect(item)}
-          />
-        ))}
+        }>
+        <View style={classes.content}>
+          {habits.map((item, key) => (
+            <HabitItem
+              delay={100 * key}
+              key={`habit-${item.id}`}
+              habitItem={item}
+              onPress={() => handleHabitSelect(item)}
+            />
+          ))}
+        </View>
       </ScrollView>
       <FloatingButton icon="plus" onPress={openAdd} />
     </View>

@@ -15,6 +15,12 @@ export default StyleSheet.create({
   mb2: {
     marginBottom: 20,
   },
+  mb3: {
+    marginBottom: 30,
+  },
+  mb4: {
+    marginBottom: 40,
+  },
   mt2: {
     marginTop: 20,
   },
@@ -32,6 +38,18 @@ export default StyleSheet.create({
   },
   ph1: {
     paddingHorizontal: 10,
+  },
+  pb1: {
+    paddingBottom: 10,
+  },
+  pb2: {
+    paddingBottom: 20,
+  },
+  pb3: {
+    paddingBottom: 30,
+  },
+  pb4: {
+    paddingBottom: 40,
   },
   ph2: {
     paddingHorizontal: 15,

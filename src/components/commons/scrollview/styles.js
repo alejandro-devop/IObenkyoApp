@@ -1,8 +1,8 @@
 export default () => ({
   root: {
-    flex: 1,
+    flexGrow: 1,
   },
   scroll: {
-    flex: 1,
+    flexGrow: 1,
   },
 });

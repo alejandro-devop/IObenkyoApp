@@ -1,5 +1,10 @@
 export default ({styles: {general = {}}, mixStyles}) => ({
+  content: {
+    flex: 1,
+    ...mixStyles(['mb4'], general),
+  },
   root: {
-    ...mixStyles(['full', 'pv1'], general),
+    flex: 1,
+    ...mixStyles(['pv1'], general),
   },
 });
