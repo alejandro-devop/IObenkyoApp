@@ -33,8 +33,8 @@ const ScrollView = ({
         onScroll={onScroll}
         scrollEventThrottle={scrollEventThrottle}
         showsVerticalScrollIndicator={false}
-        style={[classes.root, style]}
-        contentContainerStyle={classes.scroll}>
+        style={[classes.root]}
+        contentContainerStyle={[classes.scroll, style]}>
         {children}
       </KeyboardAwareScrollView>
     );
@@ -45,8 +45,8 @@ const ScrollView = ({
       onScroll={onScroll}
       scrollEventThrottle={scrollEventThrottle}
       showsVerticalScrollIndicator={false}
-      style={[classes.root, style]}
-      contentContainerStyle={classes.scroll}>
+      style={[classes.root]}
+      contentContainerStyle={[classes.scroll, style]}>
       {children}
     </ScrollViewBase>
   );

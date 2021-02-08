@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ImageBackground, SafeAreaView, View} from 'react-native';
+import {ImageBackground, View} from 'react-native';
 import BaseLayout from 'screens/layouts/base-layout';
 import {useStyles} from 'theme/hooks';
 import {ScrollView} from 'components/commons';
-import imageBg from 'assets/backgrounds/background.jpg';
+import imageBg from 'assets/backgrounds/pattern-black.png';
+// import imageBg from 'assets/backgrounds/pattern-blue.png';
 import styles from './styles';
 
 /**
@@ -19,7 +20,11 @@ const LandingLayout = ({children, statusColor = 'light-content'}) => {
   return (
     <BaseLayout statusColor={statusColor}>
       <ImageBackground source={imageBg} style={classes.image} />
-      <View style={classes.root}>{children}</View>
+      <View style={classes.root}>
+        <ScrollView useKeyboard style={classes.scroll}>
+          {children}
+        </ScrollView>
+      </View>
     </BaseLayout>
   );
 };

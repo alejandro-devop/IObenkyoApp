@@ -1,3 +1,8 @@
 export default () => ({
-  root: {},
+  root: {
+    flex: 1,
+  },
+  scroll: {
+    flex: 1,
+  },
 });

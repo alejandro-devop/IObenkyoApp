@@ -43,10 +43,25 @@ export default StyleSheet.create({
     paddingHorizontal: 25,
   },
   pt1: {
-    paddingTop: 20,
+    paddingTop: 10,
   },
   pt2: {
+    paddingTop: 20,
+  },
+  pt3: {
+    paddingTop: 30,
+  },
+  pt4: {
     paddingTop: 40,
+  },
+  pt5: {
+    paddingTop: 50,
+  },
+  pt6: {
+    paddingTop: 60,
+  },
+  pt8: {
+    paddingTop: 80,
   },
   pv1: {
     paddingVertical: 5,
@@ -58,6 +73,6 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   roundedSquare: {
-    borderRadius: 40,
+    borderRadius: 20,
   },
 });
