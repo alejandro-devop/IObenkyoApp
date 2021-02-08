@@ -82,7 +82,7 @@ class ApiService {
       const requestPayload = {
         method,
         headers: {
-          accept: 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json',
           Authorization: this.token ? `Bearer ${this.token}` : null,
           ...headers,

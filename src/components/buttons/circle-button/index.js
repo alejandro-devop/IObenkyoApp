@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, TouchableOpacity, View} from 'react-native';
 import Icon from 'components/base/icon';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
@@ -10,6 +10,7 @@ import classNames from 'utils/classNames';
 const CircleButton = ({
   danger,
   icon,
+  isLoading,
   label,
   onPress,
   primary,
@@ -31,16 +32,20 @@ const CircleButton = ({
           },
           classes,
         )}>
-        <Icon
-          name={icon}
-          style={classNames(
-            {
-              icon: true,
-              iconSM: size === 'sm',
-            },
-            classes,
-          )}
-        />
+        {!isLoading ? (
+          <Icon
+            name={icon}
+            style={classNames(
+              {
+                icon: true,
+                iconSM: size === 'sm',
+              },
+              classes,
+            )}
+          />
+        ) : (
+          <ActivityIndicator color="#FFF" />
+        )}
       </TouchableOpacity>
       {!isEmpty(label) && (
         <Text variant="caption" style={classes.label}>

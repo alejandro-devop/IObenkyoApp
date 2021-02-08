@@ -3,6 +3,7 @@ import {ActivityIndicator, TouchableOpacity, View} from 'react-native';
 import Text from 'components/base/text';
 import classNames from 'utils/classNames';
 import {useStyles} from 'theme/hooks';
+import PropTypes from 'prop-types';
 import styles from './styles';
 
 const Button = ({children, disabled, isLoading, onPress, secondary}) => {
@@ -30,6 +31,12 @@ const Button = ({children, disabled, isLoading, onPress, secondary}) => {
       {isLoading && <ActivityIndicator color="#FFF" />}
     </Component>
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 export default Button;

@@ -1,12 +1,12 @@
 export default ({palette}) => ({
   buttonWrapper: {
     alignItems: 'center',
-    backgroundColor: palette.secondaryTransparent,
+    backgroundColor: palette.secondaryLight,
     borderRadius: 100,
     justifyContent: 'center',
     marginHorizontal: 10,
-    width: 60,
-    height: 60,
+    width: 45,
+    height: 45,
   },
   buttonWrapperPrimary: {
     backgroundColor: palette.primary,
@@ -23,7 +23,7 @@ export default ({palette}) => ({
   },
   icon: {
     color: '#FFF',
-    fontSize: 35,
+    fontSize: 25,
   },
   iconSM: {
     fontSize: 25,

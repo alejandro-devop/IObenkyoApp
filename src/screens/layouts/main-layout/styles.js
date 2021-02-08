@@ -1,6 +1,6 @@
 export default ({palette = {}, styles: {general = {}}, mixStyles}) => ({
   root: {
     backgroundColor: palette.secondaryLight,
-    ...mixStyles(['full'], general),
+    ...mixStyles(['full', 'ph1'], general),
   },
 });

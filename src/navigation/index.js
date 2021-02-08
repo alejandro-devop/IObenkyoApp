@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import useSession from 'hooks/use-session';
 import UnAuthenticatedPages from 'navigation/UnAuthenticatedPages';
 import AuthenticationPages from 'navigation/AuthenticationPages';
+import TestAreaPages from 'navigation/TestAreaPages';
 
 /**
  * This component holds all application navigation pages.
@@ -14,6 +15,7 @@ import AuthenticationPages from 'navigation/AuthenticationPages';
 const AppNavigator = () => {
   const {session = {}} = useSession();
   const {logged} = session;
+  const test = true;
   return (
     <NavigationContainer>
       {!logged && <UnAuthenticatedPages />}

@@ -1,9 +1,11 @@
 export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
   addOnWrapper: {
     marginLeft: 10,
+    justifyContent: 'center',
   },
   preOnWrapper: {
     marginRight: 10,
+    justifyContent: 'center',
   },
   valueTextCenter: {
     alignItems: 'center',
@@ -27,13 +29,16 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
   },
   label: {
     ...mixStyles(['label'], inputs),
-    ...mixStyles(['paragraph', 'bold'], typography),
+    ...mixStyles(['bold'], typography),
   },
   labelSecondary: {
     ...mixStyles(['labelSecondary'], inputs),
   },
   labelDisabled: {
     ...mixStyles(['labelDisabled'], inputs),
+  },
+  labelLeft: {
+    ...mixStyles(['labelLeft'], inputs),
   },
   inputSecondary: {
     ...mixStyles(['inputSecondary'], inputs),

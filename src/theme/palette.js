@@ -11,7 +11,7 @@ const palette = {
   secondaryDark: '#212121',
   secondaryLight: '#757575',
   success: '#00e676',
-  successTransparent: 'rgba(0, 230, 118, 0.8)',
+  successTransparent: 'rgba(0, 230, 118, 0.4)',
   danger: '#d50000',
   dangerTransparent: 'rgba(213, 0, 0, 0.6)',
   error: '#d50000',

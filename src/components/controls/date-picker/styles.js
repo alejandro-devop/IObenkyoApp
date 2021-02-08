@@ -14,5 +14,9 @@ export default ({palette = {}}) => ({
   closeIcon: {
     color: palette.primary,
   },
-  closeButton: {marginRight: 10},
+  closeButton: {
+    marginRight: 10,
+    borderWidth: 2,
+    borderColor: '#FFF',
+  },
 });

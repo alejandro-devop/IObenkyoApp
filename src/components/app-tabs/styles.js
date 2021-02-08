@@ -1,9 +1,13 @@
-export default ({palette}) => ({
+export default ({palette, states: {}}) => ({
   root: {
-    backgroundColor: palette.primary,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingBottom: 20,
-    paddingTop: 10,
+    paddingTop: 4,
+    paddingBottom: 5,
+  },
+  wrapper: {
+    backgroundColor: palette.secondary,
+    borderTopWidth: 1,
+    borderTopColor: palette.secondaryLight,
   },
 });

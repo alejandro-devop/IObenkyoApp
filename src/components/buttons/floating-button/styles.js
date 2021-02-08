@@ -1,18 +1,15 @@
 export default ({palette = {}}) => ({
   icon: {
     color: '#FFF',
-    fontSize: 30,
+    fontSize: 25,
   },
   root: {
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: palette.primary,
     borderRadius: 100,
-    height: 60,
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    width: 60,
+    height: 45,
+    width: 45,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -20,7 +17,13 @@ export default ({palette = {}}) => ({
     },
     shadowOpacity: 0.36,
     shadowRadius: 6.68,
-
     elevation: 11,
+  },
+  wrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
   },
 });

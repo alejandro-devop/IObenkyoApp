@@ -1,15 +1,15 @@
-export default ({palette = {}, styles: {typography = {}}, mixStyles}) => ({
+export default ({palette = {}, styles: {general, typography}, mixStyles}) => ({
   root: {
     backgroundColor: palette.primary,
     borderRadius: 40,
     flexDirection: 'row',
-    paddingHorizontal: 30,
-    paddingVertical: 14,
     marginBottom: 10,
-    minWidth: 200,
+    ...mixStyles(['ph3', 'pv1', 'mh1'], general),
   },
   rootSecondary: {
     backgroundColor: palette.secondary,
+    borderWidth: 1,
+    borderColor: palette.secondaryLight,
   },
   rootDisabled: {
     backgroundColor: palette.grayTransparent,
@@ -22,7 +22,6 @@ export default ({palette = {}, styles: {typography = {}}, mixStyles}) => ({
   },
   text: {
     color: '#FFF',
-    flex: 1,
     textAlign: 'center',
     ...mixStyles(['paragraph', 'bold'], typography),
   },

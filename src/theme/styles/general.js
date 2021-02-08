@@ -25,13 +25,22 @@ export default StyleSheet.create({
     marginVertical: 10,
   },
   my2: {
-    marginVertical: 20,
+    marginVertical: 15,
+  },
+  mh1: {
+    marginHorizontal: 5,
   },
   ph1: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   ph2: {
-    paddingHorizontal: 40,
+    paddingHorizontal: 15,
+  },
+  ph3: {
+    paddingHorizontal: 20,
+  },
+  ph4: {
+    paddingHorizontal: 25,
   },
   pt1: {
     paddingTop: 20,
@@ -40,10 +49,13 @@ export default StyleSheet.create({
     paddingTop: 40,
   },
   pv1: {
-    paddingVertical: 20,
+    paddingVertical: 5,
   },
   pv2: {
     paddingVertical: 40,
+  },
+  rounded1: {
+    borderRadius: 10,
   },
   roundedSquare: {
     borderRadius: 40,

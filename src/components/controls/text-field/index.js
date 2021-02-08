@@ -51,6 +51,7 @@ const TextField = ({
   keyboardType,
   disabled,
   label,
+  labelLeft,
   lines,
   maxLength,
   multiline,
@@ -83,8 +84,14 @@ const TextField = ({
     <View style={classes.inputWrapper}>
       {label && (
         <Text
+          variant="subtitle"
           style={classNames(
-            {label: true, labelSecondary: secondary, labelDisabled: disabled},
+            {
+              label: true,
+              labelLeft,
+              labelSecondary: secondary,
+              labelDisabled: disabled,
+            },
             classes,
           )}>
           {label}

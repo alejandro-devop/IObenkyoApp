@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import View from 'components/base/view';
 import styles from './styles';
 import {useStyles} from 'theme/hooks';
 import tabsConfig from 'config/tabs';
@@ -16,17 +16,19 @@ const AppTabs = ({state = {}}) => {
   };
 
   return (
-    <View style={classes.root}>
-      {tabsConfig.map((tab, key) => (
-        <TabButton
-          key={`tab-item-${key}`}
-          label={tab.label}
-          icon={tab.icon}
-          path={tab.path}
-          selected={tab.path === routeNames[state.index]}
-          onPress={handlePress}
-        />
-      ))}
+    <View style={classes.wrapper} safe>
+      <View style={classes.root}>
+        {tabsConfig.map((tab, key) => (
+          <TabButton
+            key={`tab-item-${key}`}
+            label={tab.label}
+            icon={tab.icon}
+            path={tab.path}
+            selected={tab.path === routeNames[state.index]}
+            onPress={handlePress}
+          />
+        ))}
+      </View>
     </View>
   );
 };

@@ -9,9 +9,10 @@ export default ({palette = {}}) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    minHeight: 65,
+    minHeight: 50,
     backgroundColor: palette.secondaryDark,
-    paddingHorizontal: 4,
+    borderBottomColor: palette.secondaryLight,
+    borderBottomWidth: 1,
   },
   safe: {
     backgroundColor: palette.secondaryDark,

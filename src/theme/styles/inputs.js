@@ -2,28 +2,32 @@ import palette from '../palette';
 
 export default {
   inputWrapper: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   inputBase: {
-    height: 50,
+    height: 40,
     borderRadius: 40,
-    paddingHorizontal: 25,
-    paddingVertical: 10,
-    backgroundColor: palette.primaryTransparent,
-    fontSize: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    fontSize: 18,
   },
   inputSecondary: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: palette.primaryTransparent,
+    color: '#FFF',
   },
   inputDisabled: {
     backgroundColor: palette.grayTransparent,
     opacity: 0.6,
   },
   label: {
-    color: palette.primaryDark,
+    color: '#FFF',
     textAlign: 'center',
     marginBottom: 2,
     paddingLeft: 10,
+  },
+  labelLeft: {
+    textAlign: 'left',
   },
   labelSecondary: {
     color: '#FFF',

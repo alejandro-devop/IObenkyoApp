@@ -1,7 +1,7 @@
 export default ({palette = {}}) => ({
   button: {
-    width: 60,
-    height: 60,
+    width: 35,
+    height: 35,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 100,
@@ -11,12 +11,10 @@ export default ({palette = {}}) => ({
   },
   icon: {
     color: '#FFF',
-    fontSize: 30,
+    fontSize: 25,
   },
   label: {
     color: '#FFF',
-    fontSize: 14,
-    fontWeight: '600',
   },
   root: {
     alignItems: 'center',

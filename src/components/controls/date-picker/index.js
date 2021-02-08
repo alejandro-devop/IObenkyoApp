@@ -11,6 +11,7 @@ import moment from 'moment';
 const DatePicker = ({
   inputFormat = 'YYYY-MM-DD',
   label,
+  labelLeft,
   name,
   onChange,
   secondary,
@@ -37,6 +38,7 @@ const DatePicker = ({
       <TextField
         addOn={() => <IconButton onPress={toggleShow} icon="calendar-alt" />}
         label={label}
+        labelLeft={labelLeft}
         onlyMask
         onPress={toggleShow}
         secondary={secondary}
