@@ -24,6 +24,7 @@ const SlideAnimation = ({
   duration = 300,
   style,
   onAnimationCompleted,
+  onLayout,
 }) => {
   const view = useRef(null);
   const [end, setEnd] = useState(false);
@@ -52,6 +53,7 @@ const SlideAnimation = ({
   // const anim = getDirection(movement);
   return (
     <Animatable.View
+      onLayout={onLayout}
       animation={getAnimation()}
       ref={view}
       onAnimationEnd={handleAnimationEnd}

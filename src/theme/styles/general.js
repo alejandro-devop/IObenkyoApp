@@ -1,5 +1,8 @@
 import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
+  'align:center': {
+    alignItems: 'center',
+  },
   displayRow: {
     flexDirection: 'row',
   },

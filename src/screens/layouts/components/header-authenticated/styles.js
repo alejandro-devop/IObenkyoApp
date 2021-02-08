@@ -1,4 +1,7 @@
 export default ({palette = {}}) => ({
+  rightWrapper: {
+    flexDirection: 'row',
+  },
   icon: {
     color: '#FFF',
   },

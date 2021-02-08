@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {SafeAreaView, View} from 'react-native';
 import {useStyles} from 'theme/hooks';
-import Text from 'components/base/text';
 import styles from './styles';
-import Icon from 'components/base/icon';
 import useSession from 'pkgs/session/hooks/useSession';
 import CircleButton from 'components/buttons/circle-button';
+import useNavigate from 'hooks/use-navigate';
 
 /**
  * Renders an application bar special for logged user
@@ -19,24 +18,39 @@ import CircleButton from 'components/buttons/circle-button';
  */
 const HeaderAuthenticated = ({icon, title}) => {
   const classes = useStyles(styles);
-  const {clear} = useSession();
-  const handleUserButton = () => {
-    clear();
+  const {
+    session: {openedMenu},
+    set,
+  } = useSession();
+  const {} = useNavigate();
+
+  const handleToggleMenu = () => {
+    set('openedMenu', !openedMenu);
   };
+
+  const handleGoToConfig = () => {};
+
   return (
     <SafeAreaView style={classes.safe}>
       <View style={classes.root}>
-        <View style={classes.offset} />
-        <View style={classes.titleWrapper}>
-          {title && <Text style={classes.title}>{title}</Text>}
-          {icon && <Icon name={icon} style={classes.titleIcon} />}
-        </View>
-        <View style={classes.buttonWrapper}>
+        <CircleButton
+          size="sm"
+          icon="bars"
+          style={classes.icon}
+          onPress={handleToggleMenu}
+        />
+        <View style={classes.rightWrapper}>
           <CircleButton
             size="sm"
-            icon="power-off"
+            icon="bell"
             style={classes.icon}
-            onPress={handleUserButton}
+            onPress={handleGoToConfig}
+          />
+          <CircleButton
+            size="sm"
+            icon="cogs"
+            style={classes.icon}
+            onPress={handleGoToConfig}
           />
         </View>
       </View>

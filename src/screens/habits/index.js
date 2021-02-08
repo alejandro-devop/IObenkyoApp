@@ -4,7 +4,7 @@ import HabitList from 'components/habit-list';
 
 const HabitsScreen = () => {
   return (
-    <MainLayout title="Habits" icon="brain">
+    <MainLayout>
       <HabitList />
     </MainLayout>
   );

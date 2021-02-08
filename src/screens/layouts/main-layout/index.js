@@ -5,6 +5,7 @@ import HeaderAuthenticated from 'screens/layouts/components/header-authenticated
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
 import BaseLayout from 'screens/layouts/base-layout';
+import UserMenu from 'components/user-menu';
 
 /**
  * Renders a layout for main screens
