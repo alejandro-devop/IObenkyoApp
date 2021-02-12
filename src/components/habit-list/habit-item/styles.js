@@ -8,7 +8,7 @@ export default ({palette = {}, styles: {general = {}}, mixStyles}) => ({
     borderRadius: 100,
   },
   root: {
-    backgroundColor: palette.secondary,
+    backgroundColor: palette.secondaryTransparent,
     borderRadius: 40,
     marginBottom: 8,
     paddingRight: 10,

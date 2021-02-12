@@ -14,7 +14,7 @@ export default ({palette = {}}) => ({
     justifyContent: 'space-between',
     minHeight: 50,
     backgroundColor: palette.secondaryDark,
-    borderBottomColor: palette.secondaryLight,
+    borderBottomColor: palette.secondaryDark,
     borderBottomWidth: 1,
   },
   safe: {

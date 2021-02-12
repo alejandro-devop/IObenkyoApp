@@ -1,6 +1,6 @@
 export default ({palette = {}, styles: {general}, mixStyles}) => ({
   icon: {
-    fontSize: 24,
+    fontSize: 20,
     color: '#FFF',
   },
   iconSM: {

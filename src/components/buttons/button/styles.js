@@ -1,8 +1,16 @@
 export default ({palette = {}, styles: {general, typography}, mixStyles}) => ({
+  loader: {
+    position: 'absolute',
+    right: 10,
+    // top: 4,
+  },
   root: {
     backgroundColor: palette.primary,
+    borderWidth: 1,
+    borderColor: palette.primary,
     borderRadius: 40,
     flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 10,
     ...mixStyles(['ph3', 'pv1', 'mh1'], general),
   },
@@ -23,6 +31,7 @@ export default ({palette = {}, styles: {general, typography}, mixStyles}) => ({
   text: {
     color: '#FFF',
     textAlign: 'center',
+    width: '100%',
     ...mixStyles(['paragraph', 'bold'], typography),
   },
   textLoading: {

@@ -2,7 +2,7 @@ export default ({palette, styles: {general}, mixStyles}) => ({
   root: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    backgroundColor: palette.secondary,
+    backgroundColor: palette.secondaryTransparent,
     marginVertical: 10,
     ...mixStyles(['rounded1'], general),
   },

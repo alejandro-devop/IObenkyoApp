@@ -1,3 +1,5 @@
+import palette from 'theme/palette';
+
 export default ({styles: {typography = {}}, mixStyles}) => ({
   root: {
     ...mixStyles(['text'], typography),
@@ -16,6 +18,9 @@ export default ({styles: {typography = {}}, mixStyles}) => ({
   },
   rootSubtitle: {
     ...mixStyles(['subtitle'], typography),
+  },
+  rootTextSecondary: {
+    color: palette.secondaryDark,
   },
   rootTitle: {
     ...mixStyles(['title'], typography),

@@ -8,6 +8,7 @@ import IconButton from 'components/buttons/icon-button';
 import UserAvatar from 'components/user-menu/avatar';
 import MenuOption from 'components/user-menu/menu-option';
 import useSession from 'pkgs/session/hooks/useSession';
+import useNavigate from 'hooks/use-navigate';
 
 /**
  * Renders the user main menu
@@ -24,11 +25,15 @@ const UserMenu = ({width}) => {
     set,
     clear,
   } = useSession();
+  const {navigation} = useNavigate();
   const handleCloseMenu = () => {
     set('openedMenu', false);
   };
   const handleLogout = () => {
     clear();
+  };
+  const handlePress = (path) => {
+    navigation.navigate(path);
   };
   if (!openedMenu) {
     return null;
@@ -51,7 +56,12 @@ const UserMenu = ({width}) => {
           </View>
           <UserAvatar />
           <View style={classes.optionsWrapper}>
-            <MenuOption label="My habits" icon="brain" />
+            <MenuOption
+              label="My habits"
+              icon="brain"
+              onPress={handlePress}
+              path="manage-habits"
+            />
             <MenuOption label="Alerts" icon="bullhorn" />
             <MenuOption label="Alerts" icon="bullhorn" />
             <MenuOption label="Agenda" icon="calendar-alt" />

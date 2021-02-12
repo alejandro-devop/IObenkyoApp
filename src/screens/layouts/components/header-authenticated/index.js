@@ -63,4 +63,4 @@ HeaderAuthenticated.propTypes = {
   title: PropTypes.string,
 };
 
-export default HeaderAuthenticated;
+export default React.memo(HeaderAuthenticated);

@@ -8,6 +8,6 @@ export default ({palette, states: {}}) => ({
   wrapper: {
     backgroundColor: palette.secondary,
     borderTopWidth: 1,
-    borderTopColor: palette.secondaryLight,
+    borderTopColor: palette.secondary,
   },
 });

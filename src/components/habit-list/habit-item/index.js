@@ -18,7 +18,7 @@ const HabitItem = ({delay = 0, habitItem = {}, onPress}) => {
     title,
   } = habitItem;
   return (
-    <Slide delay={delay} direction="right" style={classes.root}>
+    <Slide delay={delay} direction="left" style={classes.root}>
       <TouchableOpacity onPress={onPress} style={classes.wrapper}>
         <View style={classes.iconWrapper}>
           <Icon name={category.icon} />

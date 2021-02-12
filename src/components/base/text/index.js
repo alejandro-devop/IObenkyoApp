@@ -12,12 +12,20 @@ import classNames from 'utils/classNames';
  * @param center
  * @param children
  * @param right
+ * @param secondary
  * @param style
  * @param variant
  * @returns {*}
  * @constructor
  */
-const Text = ({center, children, right, style, variant = 'text'}) => {
+const Text = ({
+  center,
+  children,
+  right,
+  style,
+  secondary,
+  variant = 'text',
+}) => {
   const classes = useStyles(styles);
   return (
     <TextBase
@@ -32,6 +40,7 @@ const Text = ({center, children, right, style, variant = 'text'}) => {
             rootSubtitle: variant === 'subtitle',
             rootText: variant === 'text',
             rootTitle: variant === 'title',
+            rootTextSecondary: secondary,
           },
           classes,
         ),

@@ -19,6 +19,12 @@ export default ({palette = {}}) => ({
     shadowRadius: 6.68,
     elevation: 11,
   },
+  rootSecondary: {
+    backgroundColor: palette.secondary,
+  },
+  rootSuccess: {
+    backgroundColor: palette.success,
+  },
   wrapper: {
     justifyContent: 'center',
     alignItems: 'center',

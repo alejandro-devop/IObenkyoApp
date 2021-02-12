@@ -91,7 +91,7 @@ const TestAreaScreen = () => {
           </Container>
         </ScrollView>
       </MainLayout>
-      {logged && <AppTabs />}
+      {/*{!logged && <AppTabs />}*/}
     </>
   );
 };

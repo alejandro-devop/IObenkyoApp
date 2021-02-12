@@ -5,6 +5,6 @@ export default ({styles: {general = {}}, mixStyles}) => ({
   },
   root: {
     flex: 1,
-    ...mixStyles(['pv1'], general),
+    ...mixStyles(['pv1', 'ph1'], general),
   },
 });

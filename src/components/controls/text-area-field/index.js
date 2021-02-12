@@ -15,6 +15,8 @@ import TextField from 'components/controls/text-field';
  * @param keyboardType
  * @param disabled
  * @param label
+ * @param labelLeft
+ * @param lines
  * @param maxLength
  * @param name
  * @param onBlur
@@ -42,6 +44,7 @@ const TextAreaField = ({
   keyboardType,
   disabled,
   label,
+  labelLeft,
   lines = 4,
   maxLength,
   name,
@@ -69,6 +72,7 @@ const TextAreaField = ({
       keyboardType={keyboardType}
       disabled={disabled}
       label={label}
+      labelLeft={labelLeft}
       maxLength={maxLength}
       multiline
       lines={lines}

@@ -1,11 +1,12 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {DashboardScreen} from 'screens';
+import {DashboardScreen, TasksControlScreen} from 'screens';
 import AgendaPages from 'navigation/AgendaPages';
 import AlertPages from 'navigation/AlertPages';
 import StatsPages from 'navigation/StatsPages';
 import AppTabs from 'components/app-tabs';
-import {HabitsScreen} from 'screens';
+import {HabitsControlScreen} from 'screens';
+import TestAreaPages from 'navigation/TestAreaPages';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,13 +25,8 @@ const DashboardPages = () => {
       <Tab.Screen name="agenda" component={AgendaPages} />
       <Tab.Screen name="alerts" component={AlertPages} />
       <Tab.Screen name="stats" component={StatsPages} />
-      <Tab.Screen
-        name="habits"
-        component={HabitsScreen}
-        // options={{
-        //   unmountOnBlur: true,
-        // }}
-      />
+      <Tab.Screen name="tasks" component={TasksControlScreen} />
+      <Tab.Screen name="habits" component={HabitsControlScreen} />
     </Tab.Navigator>
   );
 };

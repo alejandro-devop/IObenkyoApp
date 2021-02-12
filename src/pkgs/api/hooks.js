@@ -40,7 +40,7 @@ export const useGet = (path, options = {}) => {
   });
   const [refreshing, setRefreshing] = useState(false);
   const {onCompleted, lazy} = options;
-  const sendRequest = useRef();
+  const sendRequest = useRef(null);
 
   const requestHandler = async (optionsOverride = {}) => {
     const response = await Api.doGet(path, {...options, optionsOverride});

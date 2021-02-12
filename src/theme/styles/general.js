@@ -88,7 +88,13 @@ export default StyleSheet.create({
     paddingVertical: 5,
   },
   pv2: {
-    paddingVertical: 40,
+    paddingVertical: 10,
+  },
+  pv3: {
+    paddingVertical: 15,
+  },
+  pv4: {
+    paddingVertical: 20,
   },
   rounded1: {
     borderRadius: 10,

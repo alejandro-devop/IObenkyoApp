@@ -24,8 +24,7 @@ const Dialog = ({
           </Text>
         </View>
       )}
-      {!disableScroll && <ScrollView>{children}</ScrollView>}
-      {disableScroll && children}
+      {children}
     </DialogBase>
   );
 };

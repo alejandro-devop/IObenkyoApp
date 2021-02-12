@@ -90,11 +90,6 @@ class ApiService {
         body: method === 'GET' ? null : JSON.stringify(payload),
       };
       const requestUrl = `${this.server}${url}`;
-      console.log(
-        'Request payload: ',
-        requestUrl,
-        JSON.stringify(requestPayload),
-      );
       const response = await fetch(requestUrl, requestPayload);
       const {status} = response;
       // Todo: handle statuses

@@ -6,6 +6,18 @@ import {useStyles} from 'theme/hooks';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
+/**
+ * Component to render all application buttons
+ * @author Alejandro <alejandro.devop@gmail.com>
+ * @version 1.0.0
+ * @param children
+ * @param disabled
+ * @param isLoading
+ * @param onPress
+ * @param secondary
+ * @returns {*}
+ * @constructor
+ */
 const Button = ({children, disabled, isLoading, onPress, secondary}) => {
   const classes = useStyles(styles);
   const Component = disabled || isLoading ? View : TouchableOpacity;
@@ -28,7 +40,11 @@ const Button = ({children, disabled, isLoading, onPress, secondary}) => {
         )}>
         {children}
       </Text>
-      {isLoading && <ActivityIndicator color="#FFF" />}
+      {isLoading && (
+        <View style={classes.loader}>
+          <ActivityIndicator color="#FFF" />
+        </View>
+      )}
     </Component>
   );
 };
@@ -37,6 +53,8 @@ Button.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
+  onPress: PropTypes.func,
+  secondary: PropTypes.bool,
 };
 
 export default Button;

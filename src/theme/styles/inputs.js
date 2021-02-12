@@ -5,16 +5,16 @@ export default {
     marginBottom: 10,
   },
   inputBase: {
-    height: 40,
+    height: 35,
     borderRadius: 40,
     paddingHorizontal: 15,
     paddingVertical: 5,
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    fontSize: 18,
+    fontSize: 16,
   },
   inputSecondary: {
     backgroundColor: palette.primaryTransparent,
-    color: '#FFF',
+    color: palette.primaryDark,
   },
   inputDisabled: {
     backgroundColor: palette.grayTransparent,
@@ -30,7 +30,7 @@ export default {
     textAlign: 'left',
   },
   labelSecondary: {
-    color: '#FFF',
+    color: palette.primary,
   },
   labelDisabled: {
     color: palette.gray,

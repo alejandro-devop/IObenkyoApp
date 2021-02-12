@@ -13,10 +13,18 @@ export default {
     save: '/api/habits/categories',
   },
   followups: {
-    mark: '/api/habits/follow-up/{habit}'
+    mark: '/api/habits/follow-up/{habit}',
   },
   test: {
     checkApi: '/api/test/check',
     checkApiParams: '/api/test/check/{id}',
+  },
+  tasks: {
+    groups: {
+      list: '/api/tasks/groups',
+      save: '/api/tasks/groups',
+      update: '/api/tasks/groups/{group}',
+      remove: '/api/tasks/groups/{group}',
+    },
   },
 };

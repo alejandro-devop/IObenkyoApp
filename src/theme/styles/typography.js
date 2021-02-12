@@ -3,21 +3,21 @@ export default {
     fontWeight: '600',
   },
   caption: {
-    fontSize: 12,
+    fontSize: 10,
   },
   paragraph: {
-    fontSize: 16,
+    fontSize: 14,
   },
   text: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#FFF',
   },
   title: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: '600',
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
   },
 };
