@@ -8,8 +8,11 @@ import {usePost} from 'pkgs/api/hooks';
 import moment from 'moment';
 import {isEmpty} from 'utils';
 import TextAreaField from 'components/controls/text-area-field';
+import palette from 'theme/palette';
 
 const HabitFollowup = ({
+  day,
+  format = 'YYYY-MM-DD',
   habitId,
   isCounter,
   counterGoal,
@@ -18,7 +21,9 @@ const HabitFollowup = ({
   onSaved,
 }) => {
   const classes = useStyles(styles);
-  const currentDate = moment().format('YYYY-MM-DD');
+  const dateToFollowUp = (isEmpty(day) ? moment() : moment(day, format)).format(
+    'YYYY-MM-DD',
+  );
   const [loading, sendRequest] = usePost('followups.mark', {
     replace: {
       habit: habitId,
@@ -35,7 +40,7 @@ const HabitFollowup = ({
   const handleDone = async () => {
     try {
       const response = await sendRequest({
-        apply_date: currentDate,
+        apply_date: dateToFollowUp,
         remove: false,
         update: Boolean(todayFollowup),
         counter: counterVal,
@@ -79,7 +84,7 @@ const HabitFollowup = ({
         </View>
       )}
       <View style={classes.actions}>
-        {loading && <ActivityIndicator color="#FFF" size={50} />}
+        {loading && <ActivityIndicator color={palette.primary} size={50} />}
         {!loading && (
           <>
             <CircleButton

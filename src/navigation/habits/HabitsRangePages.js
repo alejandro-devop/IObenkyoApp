@@ -1,18 +1,18 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HabitsManageScreen} from 'screens';
+import {HabitsControlScreen} from 'screens';
 const Stack = createStackNavigator();
 
-const AddHabitPages = () => {
+const HabitsRangePages = () => {
   return (
     <Stack.Navigator
-      initialRouteName="manage-habits-index"
+      initialRouteName="habits-range-index"
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="manage-habits-index" component={HabitsManageScreen} />
+      <Stack.Screen name="habits-range-index" component={HabitsControlScreen} />
     </Stack.Navigator>
   );
 };
 
-export default AddHabitPages;
+export default HabitsRangePages;

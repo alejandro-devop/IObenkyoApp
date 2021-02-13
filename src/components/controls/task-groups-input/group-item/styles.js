@@ -13,5 +13,6 @@ export default ({palette, styles: {general}, mixStyles}) => ({
   textItem: {},
   textWrapper: {
     flex: 1,
+    marginLeft: 20,
   },
 });

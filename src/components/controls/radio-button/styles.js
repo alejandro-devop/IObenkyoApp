@@ -10,8 +10,8 @@ export default ({
     borderColor: palette.secondary,
     borderWidth: 4,
     justifyContent: 'center',
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
   },
   controlSpacing: {},
   controlSmall: {
@@ -20,6 +20,9 @@ export default ({
   },
   controlChecked: {
     borderColor: palette.primary,
+  },
+  controlCheckedSuccess: {
+    borderColor: palette.success,
   },
   controlInner: {
     backgroundColor: palette.primary,
@@ -33,10 +36,16 @@ export default ({
     width: 20,
     height: 20,
   },
+  controlInnerCheckedSuccess: {
+    backgroundColor: palette.success,
+  },
+  controlInnerCheckedDanger: {
+    backgroundColor: palette.danger,
+  },
   root: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 20,
+    // marginRight: 20,
   },
   label: {
     marginRight: 20,

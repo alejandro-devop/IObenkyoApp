@@ -14,6 +14,7 @@ export default {
   },
   followups: {
     mark: '/api/habits/follow-up/{habit}',
+    weeklyFollowUps: '/api/habits/daily-follow-up/from/{from}/to/{to}',
   },
   test: {
     checkApi: '/api/test/check',

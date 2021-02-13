@@ -5,8 +5,7 @@ import AgendaPages from 'navigation/AgendaPages';
 import AlertPages from 'navigation/AlertPages';
 import StatsPages from 'navigation/StatsPages';
 import AppTabs from 'components/app-tabs';
-import {HabitsControlScreen} from 'screens';
-import TestAreaPages from 'navigation/TestAreaPages';
+import HabitsRangePages from 'navigation/habits/HabitsRangePages';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +25,7 @@ const DashboardPages = () => {
       <Tab.Screen name="alerts" component={AlertPages} />
       <Tab.Screen name="stats" component={StatsPages} />
       <Tab.Screen name="tasks" component={TasksControlScreen} />
-      <Tab.Screen name="habits" component={HabitsControlScreen} />
+      <Tab.Screen name="habits" component={HabitsRangePages} />
     </Tab.Navigator>
   );
 };

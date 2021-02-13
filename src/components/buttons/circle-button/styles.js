@@ -12,10 +12,10 @@ export default ({palette}) => ({
     backgroundColor: palette.primary,
   },
   buttonWrapperSuccess: {
-    backgroundColor: palette.successTransparent,
+    backgroundColor: palette.success,
   },
   buttonWrapperDanger: {
-    backgroundColor: palette.dangerTransparent,
+    backgroundColor: palette.danger,
   },
   buttonWrapperSM: {
     width: 35,
