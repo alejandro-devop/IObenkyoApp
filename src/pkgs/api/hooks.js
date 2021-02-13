@@ -76,7 +76,7 @@ export const useGet = (path, options = {}) => {
     data,
     getData,
     loading,
-    refresh,
+      refresh,
     refreshing,
   };
 };

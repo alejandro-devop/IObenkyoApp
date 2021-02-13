@@ -7,6 +7,7 @@ import useToggle from 'hooks/use-toggle';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
 import moment from 'moment';
+import classNames from 'utils/classNames';
 
 const DatePicker = ({
   inputFormat = 'YYYY-MM-DD',
@@ -45,7 +46,11 @@ const DatePicker = ({
         value={value ? moment(date).format('YYYY-MM-DD') : null}
       />
       {show && (
-        <View style={classes.calendarWrapper}>
+        <View
+          style={classNames(
+            {calendarWrapper: true, calendarWrapperSecondary: secondary},
+            classes,
+          )}>
           <View style={classes.actionsWrapper}>
             <IconButton
               icon="times"

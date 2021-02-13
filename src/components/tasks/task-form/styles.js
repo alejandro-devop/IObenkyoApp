@@ -10,6 +10,9 @@ export default ({palette, styles: {general = {}}, mixStyles}) => ({
     backgroundColor: palette.secondaryTransparent,
     ...mixStyles(['ph1', 'pv2', 'rounded1'], general),
   },
+  rootSecondary: {
+    backgroundColor: '#FFF',
+  },
   row: {
     marginBottom: 10,
   },

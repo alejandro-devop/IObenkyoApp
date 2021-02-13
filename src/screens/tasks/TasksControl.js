@@ -6,9 +6,9 @@ import TaskAdd from 'components/tasks/task-add';
 const TasksControlScreen = () => {
   return (
     <MainLayout>
-      {/*<TasksControl />*/}
+      <TasksControl />
       {/*<GroupAdd />*/}
-      <TaskAdd/>
+      {/*<TaskAdd/>*/}
     </MainLayout>
   );
 };

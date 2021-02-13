@@ -11,6 +11,9 @@ export default ({palette = {}}) => ({
     borderRadius: 40,
     marginBottom: 40,
   },
+  calendarWrapperSecondary: {
+    backgroundColor: palette.secondaryTransparent,
+  },
   closeIcon: {
     color: palette.primary,
   },

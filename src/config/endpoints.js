@@ -20,6 +20,8 @@ export default {
     checkApiParams: '/api/test/check/{id}',
   },
   tasks: {
+    list: '/api/tasks',
+    save: '/api/tasks',
     groups: {
       list: '/api/tasks/groups',
       save: '/api/tasks/groups',

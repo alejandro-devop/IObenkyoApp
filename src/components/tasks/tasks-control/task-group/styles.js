@@ -1,14 +1,17 @@
 export default ({palette, styles: {general = {}}, mixStyles}) => ({
   actions: {
     marginTop: 10,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
     backgroundColor: palette.secondaryTransparent,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
     borderTopRightRadius: 10,
-    ...mixStyles(['ph3', 'pv4'], general),
+    ...mixStyles(['pv4'], general),
+  },
+  emptyText: {
+    textAlign: 'center',
   },
   root: {
     ...mixStyles(['mb2'], general),

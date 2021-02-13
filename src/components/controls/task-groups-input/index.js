@@ -9,7 +9,14 @@ import {useGet} from 'pkgs/api/hooks';
 import InputDialog from 'components/controls/task-groups-input/input-dialog';
 import {isEmpty} from 'utils';
 
-const TaskGroupsInput = ({label, labelLeft, name, onChange, value}) => {
+const TaskGroupsInput = ({
+  label,
+  labelLeft,
+  name,
+  onChange,
+  secondary,
+  value,
+}) => {
   const classes = useStyles(styles);
   const [dialogOpened, toggleDialog] = useToggle();
   const [selected, setSelected] = useState(value);
@@ -39,6 +46,7 @@ const TaskGroupsInput = ({label, labelLeft, name, onChange, value}) => {
           onChange={onChange}
           value={valueToDisplay}
           onPress={() => toggleDialog()}
+          secondary={secondary}
           addOn={() => (
             <IconButton
               secondary

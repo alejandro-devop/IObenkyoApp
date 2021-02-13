@@ -6,7 +6,7 @@ import Text from 'components/base/text';
 import TaskItem from '../task-item';
 import CircleButton from 'components/buttons/circle-button';
 
-const TaskGroup = ({group = {}}) => {
+const TaskGroup = ({group = {}, onAddTask}) => {
   const {name, tasks = [], id} = group;
   const [selected, setSelected] = useState([]);
   const classes = useStyles(styles);
@@ -24,6 +24,9 @@ const TaskGroup = ({group = {}}) => {
         <Text variant="subtitle">{name}</Text>
       </View>
       <View style={classes.container}>
+        {tasks.length === 0 && (
+          <Text style={classes.emptyText}>No task added yet</Text>
+        )}
         {tasks.map((item, key) => (
           <TaskItem
             checked={isSelected(key)}
@@ -33,7 +36,7 @@ const TaskGroup = ({group = {}}) => {
           />
         ))}
         <View style={classes.actions}>
-          <CircleButton icon="plus" primary />
+          <CircleButton icon="plus" primary onPress={() => onAddTask(group)} />
         </View>
       </View>
     </View>

@@ -6,7 +6,7 @@ import styles from './styles';
 import palette from 'theme/palette';
 import classNames from 'utils/classNames';
 
-const Switch = ({label, name, onChange, success, value}) => {
+const Switch = ({label, name, onChange, success, secondary, value}) => {
   const classes = useStyles(styles);
   const [isEnabled, setIsEnabled] = useState(Boolean(value));
   const toggleSwitch = () => {
@@ -23,7 +23,12 @@ const Switch = ({label, name, onChange, success, value}) => {
 
   return (
     <View style={classes.root}>
-      {label && <Text style={classNames({label: true}, classes)}>{label}</Text>}
+      {label && (
+        <Text
+          style={classNames({label: true, labelSecondary: secondary}, classes)}>
+          {label}
+        </Text>
+      )}
       <SwitchBase
         trackColor={{
           // false: '#FFF',

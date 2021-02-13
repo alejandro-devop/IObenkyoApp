@@ -5,6 +5,7 @@ export default ({styles: {inputs = {}, typography = {}}, mixStyles}) => ({
     ...mixStyles(['paragraph', 'bold'], typography),
   },
   labelSecondary: {
+    fontWeight: '600',
     ...mixStyles(['labelSecondary'], inputs),
   },
   root: {
