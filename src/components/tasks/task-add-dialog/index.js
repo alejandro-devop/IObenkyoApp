@@ -5,7 +5,7 @@ import styles from './styles';
 import TaskAdd from 'components/tasks/task-add';
 
 const TaskAddDialog = ({open, onClose, selectedGroup = {}, onSaved}) => {
-  const {name} = selectedGroup;
+  const {name} = selectedGroup || {};
   const classes = useStyles(styles);
   return (
     <Dialog

@@ -22,6 +22,7 @@ export default {
   tasks: {
     list: '/api/tasks',
     save: '/api/tasks',
+    change: '/api/tasks/change/{task}',
     groups: {
       list: '/api/tasks/groups',
       save: '/api/tasks/groups',

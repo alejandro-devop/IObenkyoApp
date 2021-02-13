@@ -35,11 +35,11 @@ export const useRequest = (options = {}) => {
  * @returns {{data: *, loading: boolean, refresh: Promise, refreshing: boolean}}
  */
 export const useGet = (path, options = {}) => {
+  const {onCompleted, lazy, beginLoading = true} = options;
   const {Api, data, loading, setData, setLoading} = useRequest({
-    startLoading: true,
+    startLoading: beginLoading,
   });
   const [refreshing, setRefreshing] = useState(false);
-  const {onCompleted, lazy} = options;
   const sendRequest = useRef(null);
 
   const requestHandler = async (optionsOverride = {}) => {
@@ -59,6 +59,7 @@ export const useGet = (path, options = {}) => {
   };
 
   const getData = async (optionsOverride = {}) => {
+    setLoading(true);
     return await requestHandler(optionsOverride);
   };
 
@@ -76,7 +77,7 @@ export const useGet = (path, options = {}) => {
     data,
     getData,
     loading,
-      refresh,
+    refresh,
     refreshing,
   };
 };

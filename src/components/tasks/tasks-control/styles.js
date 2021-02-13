@@ -1,4 +1,12 @@
-export default ({styles: {general = {}}, mixStyles}) => ({
+export default ({palette, styles: {general = {}}, mixStyles}) => ({
+  emptySetWrapper: {
+    alignItems: 'center',
+    backgroundColor: palette.secondaryTransparent,
+    ...mixStyles(['pv2', 'rounded1'], general),
+  },
+  emptyText: {
+    marginBottom: 20,
+  },
   fabWrapper: {
     position: 'absolute',
     bottom: 0,
