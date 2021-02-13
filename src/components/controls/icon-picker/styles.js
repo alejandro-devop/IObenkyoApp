@@ -1,6 +1,6 @@
 export default ({palette = {}}) => ({
   icon: {
-    color: palette.primaryDark,
+    color: palette.secondaryDark,
     fontSize: 35,
   },
   iconsDialog: {

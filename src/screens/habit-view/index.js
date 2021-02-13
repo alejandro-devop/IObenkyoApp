@@ -5,7 +5,7 @@ import useSession from 'pkgs/session/hooks/useSession';
 import InfoRow from 'components/base/info-row';
 import {useStyles} from 'theme/hooks';
 import styles from './styles';
-import HabitFollowup from 'components/habit-followup';
+import HabitFollowup from 'components/habits/habit-followup';
 import moment from 'moment';
 import {isEmpty} from 'utils';
 import useHabits from 'hooks/use-habits';

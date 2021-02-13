@@ -1,6 +1,6 @@
 import React from 'react';
 import InsidesLayout from 'screens/layouts/insides-layout';
-import HabitAdd from 'components/habit-add';
+import HabitAdd from 'components/habits/habit-add';
 
 const HabitsAddScreen = () => {
   return (

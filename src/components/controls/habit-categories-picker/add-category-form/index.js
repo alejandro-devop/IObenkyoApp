@@ -36,11 +36,13 @@ const AddCategoryForm = ({open, onClose}) => {
         label="Name"
         name="title"
         value={title}
+        secondary
         onChange={handleChange}
       />
       <IconPicker
         label="Icon"
         placeholder="Select an icon"
+        secondary
         name="icon"
         value={icon}
         onChange={handleChange}

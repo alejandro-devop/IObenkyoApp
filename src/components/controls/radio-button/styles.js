@@ -5,10 +5,10 @@ export default ({
 }) => ({
   control: {
     alignItems: 'center',
-    backgroundColor: palette.secondaryTransparent2,
+    backgroundColor: 'rgba(255,255,255,0.8)',
     borderRadius: 100,
     borderColor: palette.secondary,
-    borderWidth: 2,
+    borderWidth: 4,
     justifyContent: 'center',
     width: 40,
     height: 40,
@@ -24,8 +24,8 @@ export default ({
   controlInner: {
     backgroundColor: palette.primary,
     borderRadius: 100,
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
   },
   controlInnerSecondary: {
     backgroundColor: palette.primary,

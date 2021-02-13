@@ -4,10 +4,12 @@ import {useStyles} from 'theme/hooks';
 import styles from './styles';
 import {ScrollView} from 'components/commons';
 import HabitItem from './habit-item';
+import Text from 'components/base/text';
 import FloatingButton from 'components/buttons/floating-button';
 import useNavigate from 'hooks/use-navigate';
 import useSession from 'pkgs/session/hooks/useSession';
 import useHabits from 'hooks/use-habits';
+import EmptyMessage from 'components/commons/empty-message';
 
 const HabitList = () => {
   const classes = useStyles(styles);
@@ -35,6 +37,9 @@ const HabitList = () => {
           <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
         }>
         <View style={classes.content}>
+          {habits.length === 0 && (
+            <EmptyMessage message="No habits added yet" />
+          )}
           {habits.map((item, key) => (
             <HabitItem
               delay={100 * key}

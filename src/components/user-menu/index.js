@@ -63,7 +63,6 @@ const UserMenu = ({width}) => {
               path="manage-habits"
             />
             <MenuOption label="Alerts" icon="bullhorn" />
-            <MenuOption label="Alerts" icon="bullhorn" />
             <MenuOption label="Agenda" icon="calendar-alt" />
             <MenuOption label="Exit" icon="power-off" onPress={handleLogout} />
           </View>

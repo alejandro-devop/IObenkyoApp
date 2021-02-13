@@ -86,6 +86,7 @@ const IconPicker = ({
             <TextField
               onChange={handleChange}
               value={query}
+              secondary={secondary}
               placeholder="Search icons"
             />
           </View>
